@@ -25,8 +25,6 @@ create a new virtual conda environment
 conda env create -f environment.yml
 ```
 
-install the requirements
-
 ```
 
 ```

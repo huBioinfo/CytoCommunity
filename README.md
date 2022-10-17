@@ -19,15 +19,11 @@
 
 ## Install
 
-create a new virtual conda environment
 
 ```
 conda env create -f environment.yml
 ```
 
-```
-
-```
 
 ### Any optional sections
 

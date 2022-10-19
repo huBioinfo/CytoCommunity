@@ -33,15 +33,11 @@ Use the instructions below to create a conda virtual environment for cyto:
 
 ```
 conda env create -f environment.yml
-```
-
 or
-
-```
 conda create --name <env_name> --file requirements.txt
 ```
 
-Install the requirements
+Or install the requirements directly:
 
 ```
 conda install --yes --file requirements.txt

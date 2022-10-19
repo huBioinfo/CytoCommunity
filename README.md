@@ -29,7 +29,7 @@ storage：10GB (It depends on the amount of data)
 
 ### Prepare for the environment 
 
-Use the instructions below to create a conda virtual environment for cyto:
+Create a conda virtual environment for cyto:
 
 ```
 $ conda env create -f environment.yml

@@ -21,9 +21,9 @@
 
 ### Running environment
 
-operation platform: win10;
+operation platform: win10
 
-CPU:i7
+CPU: i7
 
 memory: 16G or more
 
@@ -34,10 +34,6 @@ storage：10GB (It depends on the amount of data)
 ```
 conda env create -f environment.yml
 ```
-
-
-### Any optional sections
-
 
 ## Usage
 

@@ -32,15 +32,15 @@ storage：10GB (It depends on the amount of data)
 Use the instructions below to create a conda virtual environment for cyto:
 
 ```
-conda env create -f environment.yml
+$ conda env create -f environment.yml
 or
-conda create --name <env_name> --file requirements.txt
+$ conda create --name <env_name> --file requirements.txt
 ```
 
 Or install the requirements directly:
 
 ```
-conda install --yes --file requirements.txt
+$ conda install --yes --file requirements.txt
 ```
 
 ## Usage

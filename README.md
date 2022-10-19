@@ -29,7 +29,7 @@ memory: 16G or more
 
 storage：10GB (It depends on the amount of data)
 
-# Steps 
+### Steps 
 
 ```
 conda env create -f environment.yml

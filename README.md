@@ -37,7 +37,7 @@ or
 $ conda create --name <env_name> --file requirements.txt
 ```
 
-Or install the requirements directly:
+Or install the requirements in your existing environment directly:
 
 ```
 $ conda install --yes --file requirements.txt

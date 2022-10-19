@@ -21,18 +21,30 @@
 
 ### Running environment
 
-operation platform: win10
-
-CPU: i7
+operation platform: win-64
 
 memory: 16G or more
 
 storage：10GB (It depends on the amount of data)
 
-### Steps 
+### Prepare for the environment 
+
+Use the instructions below to create a conda virtual environment for cyto:
 
 ```
 conda env create -f environment.yml
+```
+
+or
+
+```
+conda create --name <env_name> --file requirements.txt
+```
+
+Install the requirements
+
+```
+conda install --yes --file requirements.txt
 ```
 
 ## Usage

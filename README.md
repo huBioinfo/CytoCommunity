@@ -46,9 +46,7 @@ $ conda install --yes --file requirements.txt
 ## Usage
 
 ```
-
 ```
-
 ## Maintainers
 
 [@HuBioinfo](https://github.com/huBioinfo)

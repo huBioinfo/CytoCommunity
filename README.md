@@ -21,17 +21,17 @@
 
 ### Running environment
 
-operation platform: win-64
-
 CPU: i7
 
-memory: 16G or more
+operation platform: win-64
 
-storage：10GB (It depends on the amount of data)
+Python: 3.10.6
 
-### Prepare for the environment 
+R: 4.2.1
 
-Create a conda virtual environment for cyto:
+### Preparing the virtual environment 
+
+Create a conda environment for cyto:
 
 ```
 $ conda env create -f environment.yml
@@ -39,18 +39,17 @@ or
 $ conda create --name <env_name> --file requirements.txt
 ```
 
-Or install the requirements in your existing environment directly:
+Or install the requirements in the existing environment directly:
 
 ```
 $ conda install --yes --file requirements.txt
 ```
 
-PS: Mind the version of torch and pyg!
-
 ## Usage
 
 ```
 ```
+
 ## Maintainers
 
 [@HuBioinfo](https://github.com/huBioinfo)

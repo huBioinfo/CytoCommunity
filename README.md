@@ -23,6 +23,8 @@
 
 operation platform: win-64
 
+CPU: i7
+
 memory: 16G or more
 
 storage：10GB (It depends on the amount of data)
@@ -43,7 +45,7 @@ Or install the requirements in your existing environment directly:
 $ conda install --yes --file requirements.txt
 ```
 
-PS: You may need to download "cyto-1.0.0-py310_0.tar.bz2" separately.
+PS: Mind the version of torch and pyg!
 
 ## Usage
 

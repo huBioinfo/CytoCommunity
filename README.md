@@ -43,6 +43,8 @@ Or install the requirements in your existing environment directly:
 $ conda install --yes --file requirements.txt
 ```
 
+PS: You may need to download the "BrainDataset.pt" and "cyto-1.0.0-py310_0.tar.bz2" separately and put the former in the folder "processed".
+
 ## Usage
 
 ```

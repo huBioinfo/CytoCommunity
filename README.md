@@ -52,9 +52,9 @@ $ conda install --yes --file requirements.txt
 
 ## Maintainers
 
-[@HuBioinfo](https://github.com/huBioinfo): huyuxuan@xidian.edu.cn
+[@HuBioinfo](https://github.com/huBioinfo)(huyuxuan@xidian.edu.cn)
 
-[@yafeixu-xidian](https://github.com/yafeixu-xidian): 22031212416@stu.xidian.edu.cn
+[@yafeixu-xidian](https://github.com/yafeixu-xidian)(22031212416@stu.xidian.edu.cn)
 
 ## Contributing
 

@@ -23,7 +23,7 @@
 
 CPU: i7
 
-operation platform: win-64
+Operation platform: win-64
 
 Python: 3.10.6
 

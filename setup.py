@@ -3,8 +3,8 @@ from setuptools import setup, find_packages
 setup(
     name='cyto community',
     version='1.0.0',
-    author='abc',
-    author_email='',
+    author='yuxuanHu',
+    author_email='huyuxuan@xidian.edu.cn',
     url='',
     license='',
     maintainer='',

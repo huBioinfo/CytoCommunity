@@ -29,7 +29,7 @@ Python: 3.10.6
 
 R: 4.2.1
 
-Anaconda: 22.9.0
+Conda: 22.9.0
 
 ### Preparing the virtual environment 
 

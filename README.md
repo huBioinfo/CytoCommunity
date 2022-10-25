@@ -25,11 +25,11 @@ CPU: i7
 
 Operation platform: win-64
 
-Python: 3.10.6
+Python version: 3.10.6
 
-R: 4.2.1
+R verision: 4.2.1
 
-Conda: 22.9.0
+Conda version: 22.9.0
 
 ### Preparing the virtual environment 
 

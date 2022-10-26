@@ -65,7 +65,7 @@ conda create --name cyto python=3.10.6
 Install the requirements:
 
 ```
-conda install --yes --file requirements_linux.txt
+conda install --file requirements_linux.txt
 ```
 
 Or Install the dependencies directly:

@@ -29,13 +29,15 @@ memory: 16G or more
 
 storage: 10GB or more
 
-#### Preparing the software virtual environment 
+#### Software environment 
 
 Conda version: 22.9.0
 
 Python version: 3.10.6
 
 R version: 4.2.1
+
+#### Preparing the virtual environment
 
 1.Create a new conda environment using .yml file or .txt file via one of the instructions:
 
@@ -62,13 +64,15 @@ memory: 16G or more
 
 storage: 10GB or more
 
-#### Preparing the  software virtual environment 
+#### Software environment 
 
 Conda version: 22.9.0
 
 Python version: 3.10.6
 
 R version: 4.2.0
+
+#### Preparing the virtual environment 
 
 1.Create a new conda environment for the program and activate it via the instructions:
 

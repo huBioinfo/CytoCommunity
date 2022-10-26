@@ -19,7 +19,7 @@
 
 ## Installation
 
-### Win10-64
+### Win10
 
 CPU: i7
 
@@ -46,8 +46,7 @@ Or install the requirements in the existing environment directly:
 ```
 $ conda install --yes --file requirements.txt
 ```
-
-#### Linux(centOS7)
+### Linux(centOS7)
 
 CPU: i7
 

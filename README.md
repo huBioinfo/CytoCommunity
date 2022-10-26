@@ -21,6 +21,8 @@
 
 ### Win10
 
+#### Running environment 
+
 CPU: i7
 
 memory: 16G or more
@@ -33,24 +35,26 @@ Conda version: 22.9.0
 
 Python version: 3.10.6
 
-Create a new conda environment:
+R version:4.2.1
+
+1.Create a new conda environment using .yml file or .txt file via one of the instructions:
 
 ```
 conda env create -f environment.yml
-```
-
-Or
-
-```
 conda create --name <env_name> --file requirements.txt
 ```
 
-Or install the requirements in the existing environment directly:
+You can also install the requirements directly in a conda environment via:
 
 ```
-$ conda install --yes --file requirements.txt
+conda create --name CytoCommunity pyhton=3.10.6
+conda activate CytoCommunity
+conda install --yes --file requirements.txt
 ```
+
 ### Linux(centOS7)
+
+#### Running environment 
 
 CPU: i7
 
@@ -64,19 +68,22 @@ Conda version: 22.9.0
 
 Python version: 3.10.6
 
-Create a new conda environment:
+R version: 4.2.0
+
+1.Create a new conda environment for the program and activate it via the instructions:
 
 ```
 conda create --name CytoCommunity python=3.10.6
+conda activate CytoCommunity
 ```
 
-Install the requirements:
+2.Install the requirements in the environment with:
 
 ```
 conda install --file requirements_linux.txt
 ```
 
-Or Install the dependencies directly:
+You can also install the dependencies directly via the instructions:
 
 ```
 conda install pandas
@@ -87,8 +94,17 @@ conda install pyg -c pyg
 
 ## Usage
 
-```
-```
+### Run step 0
+
+
+
+### Run step 1
+
+### Run step 2
+
+### Run step 3
+
+### Run step 4
 
 ## Maintainers
 

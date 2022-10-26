@@ -19,7 +19,7 @@
 
 ## Install
 
-### Win10
+### Windows
 
 #### Hardware environment 
 

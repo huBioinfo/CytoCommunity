@@ -110,11 +110,25 @@ CytoCommunity can be utilized through both supervised and unsupervised learning.
 
   5. Visualization of the result of clustering.
 
+### Supervised learning
+
 #### Running Step0_Construct_KNNgraph.py
 
 #### Running Step1_DataImport.py
 
 #### Running Step2_SoftClusterLearning_Supervised.py
+
+#### Running Step3_ConsensusClustering.R
+
+#### Running Step4_Visualization.py
+
+### Unsupervised learning
+
+#### Running Step0_Construct_KNNgraph.py
+
+#### Running Step1_DataImport.py
+
+#### Running Step2_SoftClusterLearning_Unsupervised.py
 
 #### Running Step3_ConsensusClustering.R
 

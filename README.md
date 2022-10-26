@@ -114,11 +114,11 @@ CytoCommunity can be utilized through both supervised and unsupervised learning.
 
 The input data of the unsupervised learning for MERFISH Brain KNN graph includes cell type label, coordinates, edge index, gragh index and the node attributes, which are text files.
 
-#### Running Step0_Construct_KNNgraph.py
+1. Step0_Construct_KNNgraph.py
 
 Use step 0 to construct KNN gragh and prepare data for the following steps.
 
-#### Running Step1_DataImport.py
+2. Running Step1_DataImport.py
 
 The running result of step 1 includes two folders, "processed" and "raw", with the former consisting of three .pt files and the latter none. 
 

@@ -54,7 +54,7 @@ conda activate CytoCommunity
 conda install --yes --file requirements.txt
 ```
 
-### Linux(centOS7)
+### Linux
 
 #### Hardware environment 
 

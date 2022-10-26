@@ -3,7 +3,7 @@
 ## Contents
 
 - [Background](#background)
-- [build](#how to build)
+- [How to build](#howtobuild)
 - [Usage](#usage)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)

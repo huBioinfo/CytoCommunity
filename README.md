@@ -46,7 +46,7 @@ conda env create -f environment.yml
 conda create --name <env_name> --file requirements.txt
 ```
 
-You can also install the requirements directly in a conda environment via:
+2.You can also install the requirements directly in a conda environment via:
 
 ```
 conda create --name CytoCommunity pyhton=3.10.6
@@ -87,7 +87,7 @@ conda activate CytoCommunity
 conda install --file requirements_linux.txt
 ```
 
-You can also install the dependencies directly via the instructions:
+3.You can also install the dependencies directly via the instructions:
 
 ```
 conda install pandas

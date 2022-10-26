@@ -35,7 +35,7 @@ Conda version: 22.9.0
 
 Python version: 3.10.6
 
-R version:4.2.1
+R version: 4.2.1
 
 1.Create a new conda environment using .yml file or .txt file via one of the instructions:
 

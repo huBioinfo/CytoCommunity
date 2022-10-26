@@ -39,7 +39,7 @@ R version: 4.2.1
 
 #### Preparing the virtual environment
 
- 1.Create a new conda environment using .yml file or .txt file via one of the instructions:
+:1. Create a new conda environment using .yml file or .txt file via one of the instructions:
 
 ```
 conda env create -f environment.yml

@@ -5,9 +5,9 @@ setup(
     version='1.0.0',
     author='yuxuanHu',
     author_email='huyuxuan@xidian.edu.cn',
-    url='',
+    url='https://github.com/huBioinfo/CytoCommunity',
     license='',
-    maintainer='',
+    maintainer='yuxuanHu',
     description='',
     packages=find_packages(),
 )

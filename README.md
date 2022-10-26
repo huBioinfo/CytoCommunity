@@ -102,4 +102,3 @@ Feel free to dive in!
 
 ## License
 
-[MIT © Richard McRichface.](../LICENSE)

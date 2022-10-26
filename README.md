@@ -54,7 +54,7 @@ Conda version: 22.9.0
 
 Python version: 3.10.6
 
-### Preparing the virtual environment 
+#### Preparing the virtual environment 
 
 Create a new conda environment:
 

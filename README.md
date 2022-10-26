@@ -23,11 +23,15 @@
 
 CPU: i7
 
+memory: 16G or more
+
+storage：10GB or more
+
+#### Preparing the virtual environment 
+
 Conda version: 22.9.0
 
 Python version: 3.10.6
-
-#### Preparing the virtual environment 
 
 Create a conda environment for cyto:
 
@@ -50,11 +54,15 @@ $ conda install --yes --file requirements.txt
 
 CPU: i7
 
+memory: 16G or more
+
+storage：10GB or more
+
+#### Preparing the virtual environment 
+
 Conda version: 22.9.0
 
 Python version: 3.10.6
-
-#### Preparing the virtual environment 
 
 Create a new conda environment:
 

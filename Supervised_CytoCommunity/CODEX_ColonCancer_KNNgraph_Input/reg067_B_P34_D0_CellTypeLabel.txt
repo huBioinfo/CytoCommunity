@@ -1,0 +1,84 @@
+granulocytes
+granulocytes
+granulocytes
+granulocytes
+granulocytes
+granulocytes
+vasculature
+vasculature
+vasculature
+vasculature
+vasculature
+CD4+ T cells CD45RO+
+CD4+ T cells CD45RO+
+CD4+ T cells CD45RO+
+CD4+ T cells CD45RO+
+CD4+ T cells CD45RO+
+CD4+ T cells CD45RO+
+CD4+ T cells CD45RO+
+tumor cells
+tumor cells
+tumor cells
+tumor cells
+tumor cells
+tumor cells
+tumor cells
+tumor cells
+tumor cells
+stroma
+stroma
+stroma
+CD68+CD163+ macrophages
+CD68+CD163+ macrophages
+CD68+CD163+ macrophages
+CD68+CD163+ macrophages
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+adipocytes
+CD8+ T cells
+B cells
+B cells
+B cells
+immune cells / vasculature
+immune cells / vasculature

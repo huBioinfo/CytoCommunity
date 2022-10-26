@@ -3,7 +3,7 @@
 ## Contents
 
 - [Background](#background)
-- [Install](#install)
+- [How to build](#How to build)
 - [Usage](#usage)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
@@ -17,7 +17,7 @@
 ### Optional sections 2
 
 
-## Install
+## How to build
 
 ### Windows
 

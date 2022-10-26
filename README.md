@@ -39,14 +39,14 @@ R version: 4.2.1
 
 #### Preparing the virtual environment
 
-:1. Create a new conda environment using .yml file or .txt file via one of the instructions:
+1. Create a new conda environment using .yml file or .txt file via one of the instructions:
 
 ```
 conda env create -f environment.yml
 conda create --name <env_name> --file requirements.txt
 ```
 
- 2.You can also install the requirements directly in a conda environment via:
+2. You can also install the requirements directly in a conda environment via:
 
 ```
 conda create --name CytoCommunity pyhton=3.10.6
@@ -74,20 +74,20 @@ R version: 4.2.0
 
 #### Preparing the virtual environment 
 
- 1.Create a new conda environment for the program and activate it via the instructions:
+1. Create a new conda environment for the program and activate it via the instructions:
 
 ```
 conda create --name CytoCommunity python=3.10.6
 conda activate CytoCommunity
 ```
 
- 2.Install the requirements in the environment with:
+2. Install the requirements in the environment with:
 
 ```
 conda install --file requirements_linux.txt
 ```
 
- 3.You can also install the dependencies directly via the instructions:
+3. You can also install the dependencies directly via the instructions:
 
 ```
 conda install pandas
@@ -100,15 +100,15 @@ conda install pyg -c pyg
 
 CytoCommunity can be utilized through both supervised and unsupervised learning. And using CytoCommunity requires five steps:
 
-  1.Constructing the KNN gragh.
+  1. Constructing the KNN gragh.
 
-  2.Importing the data acquired from the KNN gragh in step 1.
+  2. Importing the data acquired from the KNN gragh in step 1.
 
-  3.Performing soft clustering through supervised or unsupervised learning.
+  3. Performing soft clustering through supervised or unsupervised learning.
 
-  4.Concensus clustering.
+  4. Concensus clustering.
 
-  5.Visualization of the result of clustering.
+  5. Visualization of the result of clustering.
 
 #### Running Step0_Construct_KNNgraph.py
 

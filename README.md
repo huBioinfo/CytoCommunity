@@ -25,9 +25,9 @@
 
 CPU: i7
 
-memory: 16G or more
+Memory: 16G or more
 
-storage: 10GB or more
+Storage: 10GB or more
 
 #### Software environment 
 
@@ -60,9 +60,9 @@ conda install --yes --file requirements.txt
 
 CPU: i7
 
-memory: 16G or more
+Memory: 16G or more
 
-storage: 10GB or more
+Storage: 10GB or more
 
 #### Software environment 
 

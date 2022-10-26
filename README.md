@@ -94,17 +94,23 @@ conda install pyg -c pyg
 
 ## Usage
 
-### Run step 0
+CytoCommunity can be utilized through both supervised and unsupervised learning. And using CytoCommunity requires five steps:
 
+1.Constructing the KNN gragh.
+2.Importing the data acquired from the KNN gragh in step 1.
+3.Performing soft clustering through supervised or unsupervised learning.
+4.Concensus clustering.
+5.Visualization.
 
+#### Running Step0_Construct_KNNgraph.py
 
-### Run step 1
+#### Running Step1_DataImport.py
 
-### Run step 2
+#### Running Step2_SoftClusterLearning_Supervised.py
 
-### Run step 3
+#### Running Step3_ConsensusClustering.R
 
-### Run step 4
+#### Running Step4_Visualization.py
 
 ## Maintainers
 

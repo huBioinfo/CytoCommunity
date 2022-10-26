@@ -21,7 +21,7 @@
 
 ### Win10
 
-#### Running environment 
+#### Hardware environment 
 
 CPU: i7
 
@@ -29,7 +29,7 @@ memory: 16G or more
 
 storage：10GB or more
 
-#### Preparing the virtual environment 
+#### Preparing the software virtual environment 
 
 Conda version: 22.9.0
 
@@ -54,7 +54,7 @@ conda install --yes --file requirements.txt
 
 ### Linux(centOS7)
 
-#### Running environment 
+#### Hardware environment 
 
 CPU: i7
 
@@ -62,7 +62,7 @@ memory: 16G or more
 
 storage：10GB or more
 
-#### Preparing the virtual environment 
+#### Preparing the  software virtual environment 
 
 Conda version: 22.9.0
 

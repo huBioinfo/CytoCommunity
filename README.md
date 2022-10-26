@@ -33,7 +33,7 @@ Conda version: 22.9.0
 
 Python version: 3.10.6
 
-Create a conda environment for cyto:
+Create a new conda environment:
 
 ```
 conda env create -f environment.yml
@@ -67,7 +67,7 @@ Python version: 3.10.6
 Create a new conda environment:
 
 ```
-conda create --name cyto python=3.10.6
+conda create --name CytoCommunity python=3.10.6
 ```
 
 Install the requirements:

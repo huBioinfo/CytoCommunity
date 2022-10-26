@@ -17,7 +17,7 @@
 ### Optional sections 2
 
 
-## Installation
+## Install
 
 ### Win10
 

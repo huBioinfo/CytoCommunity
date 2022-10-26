@@ -27,7 +27,7 @@ CPU: i7
 
 memory: 16G or more
 
-storage：10GB or more
+storage: 10GB or more
 
 #### Preparing the software virtual environment 
 
@@ -60,7 +60,7 @@ CPU: i7
 
 memory: 16G or more
 
-storage：10GB or more
+storage: 10GB or more
 
 #### Preparing the  software virtual environment 
 

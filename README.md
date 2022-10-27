@@ -114,7 +114,7 @@ Use step 0 to construct KNN gragh and prepare data for the following steps.
 
 #### 2. Running Step1_DataImport.py
 
-The running result of step 1 includes two folders, "processed" and "raw", with the former containing three .pt files and the latter nothing. 
+The running result of step 1 includes two folders, "processed" and "raw", with the former containing three .pt files, named pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing. 
 
 #### 3. Running Step2_SoftClusterLearning_Unsupervised.py
 

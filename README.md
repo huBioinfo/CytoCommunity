@@ -11,10 +11,6 @@
 
 ## Background
 
-### Optional sections 1
-
-
-### Optional sections 2
 
 
 ## Installation

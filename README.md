@@ -137,7 +137,8 @@ In step 2, CytoCommunity performs soft clustering through unsupervised learning.
 Step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.csv" will be generated to show the result.
 
 ```
-
+(base) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> R.exe
+> source("Step3_ConsensusClustering.R")
 ```
 
 #### 5. Step4_Visualization.py

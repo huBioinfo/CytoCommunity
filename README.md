@@ -29,7 +29,7 @@ Conda version: 22.9.0
 
 Python version: 3.10.6
 
-R version: 3.6.0
+R version: 4.2.1
 
 #### Preparing the virtual environment
 
@@ -68,7 +68,7 @@ Conda version: 22.9.0
 
 Python version: 3.10.6
 
-R version: 4.2.0
+R version: 3.6.0
 
 #### Preparing the virtual environment 
 

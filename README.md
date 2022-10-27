@@ -79,13 +79,7 @@ conda create --name CytoCommunity python=3.10.6
 conda activate CytoCommunity
 ```
 
-2. Install the requirements in the environment with:
-
-```
-conda install --file requirements_linux.txt
-```
-
-3. You can also install the dependencies in the exsiting environment directly via :
+2. Install the dependencies in the exsiting environment directly via :
 
 ```
 conda install pandas

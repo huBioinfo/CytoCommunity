@@ -128,7 +128,7 @@ Step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.
 
 #### 5. Running Step4_Visualization.py
 
-Visualization of the consensus clustering is the final step of CytoCommunity algorithm. After this, we'll eventually get the clustering
+Visualization of the consensus clustering is the final step of CytoCommunity algorithm. 
 
 ### Supervised CytoCommunity
 

@@ -168,7 +168,7 @@ Use step 0 to construct KNN gragh and prepare data for the following steps. Here
 The running result of step 1 includes two folders, "processed" and "raw", with the former containing three .pt files, named pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing.
 
 ```
-(CytoCommunity) PS D:\test\CytoCommunity-main\upervised_CytoCommunity> python Step1_DataImport.py
+(CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step1_DataImport.py
 ```
 
 #### 3. Step2_SoftClusterLearning_Supervised.py

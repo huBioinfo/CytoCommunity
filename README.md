@@ -36,8 +36,8 @@ R version: 4.2.1
 1. Create a new conda environment using .yml file or .txt file with one of the commands:
 
 ```
-conda env create -f environment.yml
-conda create --name <env_name> --file requirements.txt
+(base) PS C:\Users\Lenovo> conda env create -f environment.yml
+(base) PS C:\Users\Lenovo> conda create --name <env_name> --file requirements.txt
 ```
 
 Note that the command should be executed in the parent directory of the .yml or .txt file.
@@ -45,9 +45,9 @@ Note that the command should be executed in the parent directory of the .yml or 
 2. You can also install the requirements directly in a new conda environment via:
 
 ```
-conda create --name CytoCommunity pyhton=3.10.6
-conda activate CytoCommunity
-conda install --yes --file requirements.txt
+(base) PS C:\Users\Lenovo> conda create --name CytoCommunity pyhton=3.10.6
+(base) PS C:\Users\Lenovo> conda activate CytoCommunity
+(CytoCommunity) PS C:\Users\Lenovo> conda install --yes --file requirements.txt
 ```
 
 3. if you want to run the script Step3_ConsensusClustering.R in PyCharm, using plugin "R language for IntelliJ" seems to be a nice choice. 

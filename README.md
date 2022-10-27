@@ -104,9 +104,9 @@ CytoCommunity can be utilized through both supervised and unsupervised learning.
 
   5. Step4: Visualization of the result of clustering in 4.
 
-### Unsupervised learning
+### Unsupervised CytoCommunity
 
-The input data of the unsupervised learning part of the CytoCommunity algorithm is for MERFISH Brain KNN graph, including cell type label, coordinates, edge index, gragh index and node attributes, which are all text files in the folder "MERFISH_Brain_KNNgraph_Input".
+The input data of the unsupervised learning part of the CytoCommunity algorithm is for MERFISH Brain KNN graph, including a image name list and cell type label, coordinates, edge index, gragh index and node attributes of cells, seen in the folder "MERFISH_Brain_KNNgraph_Input".
 
 1. Step0_Construct_KNNgraph.py
 
@@ -122,17 +122,19 @@ The running result of step 1 includes two folders, "processed" and "raw", with t
 
 5. Running Step4_Visualization.py
 
-### Supervised learning
+### Supervised CytoCommunity
 
-#### Running Step0_Construct_KNNgraph.py
+The input data of the supervised learning part of the CytoCommunity algorithm is for codex colon cancer KNN graph, including a image name list and cell type label, coordinates, edge index, gragh index, gragh label and node attributes of cells, seen in the folder "CODEX_ColonCancer_KNNgraph_Input".
 
-#### Running Step1_DataImport.py
+1. Running Step0_Construct_KNNgraph.py
 
-#### Running Step2_SoftClusterLearning_Supervised.py
+2. Running Step1_DataImport.py
 
-#### Running Step3_ConsensusClustering.R
+3. Running Step2_SoftClusterLearning_Supervised.py
 
-#### Running Step4_Visualization.py
+4. Running Step3_ConsensusClustering.R
+
+5. Running Step4_Visualization.py
 
 ## Maintainers
 

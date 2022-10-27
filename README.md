@@ -79,7 +79,7 @@ conda create --name CytoCommunity python=3.10.6
 conda activate CytoCommunity
 ```
 
-2. Install the dependencies in the exsiting environment directly via :
+2. Install the dependencies in the exsiting environment directly via:
 
 ```
 conda install pandas
@@ -108,11 +108,21 @@ The input data of the unsupervised learning part of CytoCommunity algorithm is i
 
 #### 1. Step0_Construct_KNNgraph.py
 
-Use step 0 to construct KNN gragh and prepare data for the following steps.
+Use step 0 to construct KNN gragh and prepare data for the following steps. Here comes the running procedure:
+
+```
+(base) PS C:\Users\Lenovo> conda activate CytoCommunity
+(CytoCommunity) PS C:\Users\Lenovo> cd D:/test/CytoCommunity_main/Unsupervised_CytoCommunity
+(CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step0_Construct_KNNgraph.py
+```
 
 #### 2. Step1_DataImport.py
 
 The running result of step 1 includes two folders, "processed" and "raw", with the former containing three .pt files, named pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing. 
+
+```
+
+```
 
 #### 3. Step2_SoftClusterLearning_Unsupervised.py
 

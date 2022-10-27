@@ -137,7 +137,7 @@ In step 2, CytoCommunity performs soft clustering through unsupervised learning.
 Step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.csv" will be generated to show the result.
 
 ```
-(base) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> R.exe
+(CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> R.exe
 > source("Step3_ConsensusClustering.R")
 ```
 
@@ -155,23 +155,47 @@ The input data of the supervised learning part of CytoCommunity algorithm is inf
 
 #### 1. Step0_Construct_KNNgraph.py
 
-Use step 0 to construct KNN gragh and prepare data for the following steps.
+Use step 0 to construct KNN gragh and prepare data for the following steps. Here comes the running procedure:
+
+```
+(base) PS C:\Users\Lenovo> conda activate CytoCommunity
+(CytoCommunity) PS C:\Users\Lenovo> cd D:\test\CytoCommunity-main\Supervised_CytoCommunity
+(CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step0_Construct_KNNgraph.py
+```
+
 
 #### 2. Step1_DataImport.py
 
 The running result of step 1 includes two folders, "processed" and "raw", with the former containing three .pt files, named pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing.
 
+```
+(CytoCommunity) PS D:\test\CytoCommunity-main\upervised_CytoCommunity> python Step1_DataImport.py
+```
+
 #### 3. Step2_SoftClusterLearning_Supervised.py
 
 CytoCommunity uses step 2 to perform soft clustering through supervised learning. This step generated a folder for each Fold in each Time that contained the cluster adjacent matrix, cluster assign matrix, gragh index, node mask and the training loss file.
+
+```
+(CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step2_SoftClusterLearning_Supervised.py
+```
 
 #### 4. Step3_ConsensusClustering.R
 
 In this part, we got a image collection folder that contained the cluster assign matrix, node mask, gragh index and consensus label files of each Fold in each Time. 
 
+```
+(CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> R.exe
+> source("Step3_ConsensusClustering.R")
+```
+
 #### 5. Step4_Visualization.py
 
 Visualization of the consensus clustering is the final step of CytoCommunity algorithm. 
+
+```
+(CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step4_Visualization.py
+```
 
 ## Maintainers
 

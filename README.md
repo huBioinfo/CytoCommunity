@@ -68,7 +68,7 @@ R version: 4.2.0
 
 #### Preparing the virtual environment 
 
-1. Create a new conda environment for the program and activate it via the instructions:
+1. Create a new conda environment for the program and activate it via:
 
 ```
 conda create --name CytoCommunity python=3.10.6
@@ -118,7 +118,11 @@ The running result of step 1 includes two folders, "processed" and "raw", with t
 
 #### 3. Running Step2_SoftClusterLearning_Unsupervised.py
 
+In step 2, CytoCommunity perform
+
 #### 4. Running Step3_ConsensusClustering.R
+
+This step is for consensus clustering using R.
 
 #### 5. Running Step4_Visualization.py
 

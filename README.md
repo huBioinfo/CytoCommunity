@@ -112,7 +112,7 @@ Use step 0 to construct KNN gragh and prepare data for the following steps. Here
 
 ```
 (base) PS C:\Users\Lenovo> conda activate CytoCommunity
-(CytoCommunity) PS C:\Users\Lenovo> cd D:/test/CytoCommunity_main/Unsupervised_CytoCommunity
+(CytoCommunity) PS C:\Users\Lenovo> cd D:\test\CytoCommunity-main\Unsupervised_CytoCommunity
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step0_Construct_KNNgraph.py
 ```
 

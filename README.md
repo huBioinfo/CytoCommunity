@@ -136,6 +136,7 @@ Step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> R.exe
+> install.packages("diceR")
 > source("Step3_ConsensusClustering.R")
 ```
 
@@ -184,6 +185,7 @@ In this part, we got a image collection folder that contained the cluster assign
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> R.exe
+> install.packages("diceR")
 > source("Step3_ConsensusClustering.R")
 ```
 

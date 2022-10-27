@@ -40,7 +40,7 @@ conda env create -f environment.yml
 conda create --name <env_name> --file requirements.txt
 ```
 
-Note that you have to execute the command in the parent directory of the .yml or .txt file.
+Note that the command should be executed in the parent directory of the .yml or .txt file.
 
 2. You can also install the requirements directly in a new conda environment via:
 

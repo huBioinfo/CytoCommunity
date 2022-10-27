@@ -11,8 +11,6 @@
 
 ## Background
 
-
-
 ## Installation
 
 ### Windows

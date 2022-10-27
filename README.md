@@ -33,20 +33,22 @@ R version: 4.2.1
 
 #### Preparing the virtual environment
 
-1. Create a new conda environment using .yml file or .txt file via one of the instructions:
+1. Create a new conda environment using .yml file or .txt file with one of the instructions:
 
 ```
 conda env create -f environment.yml
 conda create --name <env_name> --file requirements.txt
 ```
 
-2. You can also install the requirements directly in a new conda environment with:
+2. You can also install the requirements directly in a new conda environment via:
 
 ```
 conda create --name CytoCommunity pyhton=3.10.6
 conda activate CytoCommunity
 conda install --yes --file requirements.txt
 ```
+
+3. if you want to run the script Step3_ConsensusClustering.R in PyCharm, using plugin "R language for IntelliJ" seems to be a nice choice. 
 
 ### Linux
 
@@ -118,13 +120,15 @@ The running result of step 1 includes two folders, "processed" and "raw", with t
 
 #### 3. Running Step2_SoftClusterLearning_Unsupervised.py
 
-In step 2, CytoCommunity perform
+In step 2, CytoCommunity performs soft clustering through unsupervised learning. This step generated a folder for each epoch of training that contains cluster adjacent matrix, cluster assign matrix, node mask, gragh index and the training loss file.
 
 #### 4. Running Step3_ConsensusClustering.R
 
-This step is for consensus clustering using R.
+Step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.csv" will be generated to show the result.
 
 #### 5. Running Step4_Visualization.py
+
+Visualization of the consensus clustering is the final step of CytoCommunity algorithm. After this, we'll eventually get the clustering
 
 ### Supervised CytoCommunity
 
@@ -135,6 +139,8 @@ The input data of the supervised learning part of the CytoCommunity algorithm is
 #### 2. Running Step1_DataImport.py
 
 #### 3. Running Step2_SoftClusterLearning_Supervised.py
+
+In step 2, CytoCommunity performs soft clustering through supervised learning. 
 
 #### 4. Running Step3_ConsensusClustering.R
 

@@ -96,13 +96,13 @@ CytoCommunity can be utilized through both supervised and unsupervised learning.
 
   1. Step0: Constructing the KNN gragh.
 
-  2. Step1: Importing the data acquired from the KNN gragh in 1.
+  2. Step1: Importing data from the KNN gragh in 1.
 
   3. Step2: Performing soft clustering through supervised or unsupervised learning.
 
   4. Step3: Concensus clustering.
 
-  5. Step4: Visualization of the result of clustering.
+  5. Step4: Visualization of the result of clustering in 4.
 
 ### Unsupervised learning
 

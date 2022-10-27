@@ -33,7 +33,7 @@ R version: 4.2.1
 
 #### Preparing the virtual environment
 
-1. Create a new conda environment using .yml file or .txt file with one of the instructions:
+1. Create a new conda environment using .yml file or .txt file with one of the commands:
 
 ```
 conda env create -f environment.yml
@@ -70,7 +70,7 @@ R version: 4.2.0
 
 #### Preparing the virtual environment 
 
-1. Create a new conda environment for the program and activate it via:
+1. Create a new conda environment for the program and activate it via the commands:
 
 ```
 conda create --name CytoCommunity python=3.10.6
@@ -83,7 +83,7 @@ conda activate CytoCommunity
 conda install --file requirements_linux.txt
 ```
 
-3. You can also install the dependencies directly via the instructions:
+3. You can also install the dependencies in the exsiting environment directly via :
 
 ```
 conda install pandas

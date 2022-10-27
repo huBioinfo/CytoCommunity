@@ -121,20 +121,32 @@ Use step 0 to construct KNN gragh and prepare data for the following steps. Here
 The running result of step 1 includes two folders, "processed" and "raw", with the former containing three .pt files, named pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing. 
 
 ```
-
+(CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step1_DataImport.py
 ```
 
 #### 3. Step2_SoftClusterLearning_Unsupervised.py
 
 In step 2, CytoCommunity performs soft clustering through unsupervised learning. This step generates a folder for each epoch of training that contains cluster adjacent matrix, cluster assign matrix, node mask, gragh index and the training loss file.
 
+```
+(CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step2_SoftClusterLearning_Unsupervised.py
+```
+
 #### 4. Step3_ConsensusClustering.R
 
 Step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.csv" will be generated to show the result.
 
+```
+
+```
+
 #### 5. Step4_Visualization.py
 
 Visualization of the consensus clustering is the final step of CytoCommunity algorithm. After this step, we eventually got the gragh of tissue cellular neighborhood (TCN).
+
+```
+(CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step4_Visualization.py
+```
 
 ### Supervised CytoCommunity
 

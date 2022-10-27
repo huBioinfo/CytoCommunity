@@ -40,7 +40,7 @@ conda env create -f environment.yml
 conda create --name <env_name> --file requirements.txt
 ```
 
-2. You can also install the requirements directly in a conda environment via:
+2. You can also install the requirements directly in a new conda environment with:
 
 ```
 conda create --name CytoCommunity pyhton=3.10.6

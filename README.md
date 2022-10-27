@@ -94,7 +94,7 @@ conda install pyg -c pyg
 
 ## Usage
 
-CytoCommunity can be utilized through both supervised and unsupervised learning. You can apply CytoCommunity in the following five steps:
+CytoCommunity can be utilized through both supervised and unsupervised learning. You can apply CytoCommunity algorithm in the following five steps:
 
   1. Step0: Constructing the KNN gragh.
 

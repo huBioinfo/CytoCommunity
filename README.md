@@ -137,7 +137,7 @@ In step 2, CytoCommunity performs soft clustering through unsupervised learning.
 Step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.csv" will be generated to show the result.
 
 ```
-(CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> R.exe
+(base) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> R.exe
 > source("Step3_ConsensusClustering.R")
 ```
 
@@ -185,7 +185,7 @@ CytoCommunity uses step 2 to perform soft clustering through supervised learning
 In this part, we got a image collection folder that contained the cluster assign matrix, node mask, gragh index and consensus label files of each Fold in each Time. 
 
 ```
-(CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> R.exe
+(base) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> R.exe
 > source("Step3_ConsensusClustering.R")
 ```
 

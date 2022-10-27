@@ -116,21 +116,11 @@ Use step 0 to construct KNN gragh and prepare data for the following steps.
 
 The running result of step 1 includes two folders, "processed" and "raw", with the former consisting of three .pt files and the latter none. 
 
-#### Running Step2_SoftClusterLearning_Supervised.py
+3. Running Step2_SoftClusterLearning_Unsupervised.py
 
-#### Running Step3_ConsensusClustering.R
+4. Running Step3_ConsensusClustering.R
 
-#### Running Step4_Visualization.py
-
-#### Running Step0_Construct_KNNgraph.py
-
-#### Running Step1_DataImport.py
-
-#### Running Step2_SoftClusterLearning_Unsupervised.py
-
-#### Running Step3_ConsensusClustering.R
-
-#### Running Step4_Visualization.py
+5. Running Step4_Visualization.py
 
 ### Supervised learning
 

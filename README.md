@@ -36,8 +36,8 @@ R version: 4.2.1
 1. Create a new conda environment using .yml file or .txt file with one of the commands:
 
 ```
-(base) PS C:\Users\Lenovo> conda env create -f environment.yml
-(base) PS C:\Users\Lenovo> conda create --name <env_name> --file requirements.txt
+(base) PS D:\test\CytoCommunity-main> conda env create -f environment.yml
+(base) PS D:\test\CytoCommunity-main> conda create --name <env_name> --file requirements.txt
 ```
 
 Note that the command should be executed in the parent directory of the .yml or .txt file.

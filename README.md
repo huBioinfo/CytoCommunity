@@ -29,7 +29,7 @@ Conda version: 22.9.0
 
 Python version: 3.10.6
 
-R version: 4.2.1
+R version: 4.1.3
 
 #### Preparing the virtual environment
 
@@ -135,7 +135,7 @@ In step 2, CytoCommunity performs soft clustering through unsupervised learning.
 Step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.csv" will be generated to show the result.
 
 ```
-(base) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> R.exe
+(CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> R.exe
 > source("Step3_ConsensusClustering.R")
 ```
 
@@ -183,7 +183,7 @@ CytoCommunity uses step 2 to perform soft clustering through supervised learning
 In this part, we got a image collection folder that contained the cluster assign matrix, node mask, gragh index and consensus label files of each Fold in each Time. 
 
 ```
-(base) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> R.exe
+(CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> R.exe
 > source("Step3_ConsensusClustering.R")
 ```
 

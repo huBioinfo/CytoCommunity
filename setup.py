@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='cyto community',
+    name='CytoCommunity',
     version='1.0.0',
     author='yuxuanHu',
     author_email='huyuxuan@xidian.edu.cn',

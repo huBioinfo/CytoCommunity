@@ -142,7 +142,7 @@ To make the soft clustering result more robust, step 3 is consensus clustering u
 
 #### 5. Step4_Visualization.py
 
-Visualization of the consensus clustering result is the final step of CytoCommunity algorithm. After this step, we eventually got the gragh of tissue cellular neighborhood(TCN).
+Visualization of the consensus clustering result is the final step of CytoCommunity algorithm. After this step, we'll get the gragh of tissue cellular neighborhood(TCN).
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step4_Visualization.py
@@ -172,7 +172,7 @@ The running result of step 1 includes two folders, "processed" and "raw", with t
 
 #### 3. Step2_SoftClusterLearning_Supervised.py
 
-CytoCommunity uses step 2 to perform soft clustering through supervised learning. This step generated a folder for each Fold in each Time that contained the cluster adjacent matrix, cluster assign matrix, gragh index, node mask and the training loss file.
+CytoCommunity uses step 2 to perform soft clustering through supervised learning. For each Fold in each Time of the training process, this step generates a folder that containes cluster adjacent matrix, cluster assign matrix, gragh index, and node mask files and a training loss file.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step2_SoftClusterLearning_Supervised.py
@@ -180,7 +180,7 @@ CytoCommunity uses step 2 to perform soft clustering through supervised learning
 
 #### 4. Step3_ConsensusClustering.R
 
-In this part, we got a image collection folder that contained the cluster assign matrix, node mask, gragh index and consensus label files of each Fold in each Time. 
+In this step, we'll get a image collection folder that contains cluster assign matrix, node mask, gragh index and consensus label files of each Fold in each Time of the training process. 
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> R.exe
@@ -190,7 +190,7 @@ In this part, we got a image collection folder that contained the cluster assign
 
 #### 5. Step4_Visualization.py
 
-Visualization of the consensus clustering is the final step of CytoCommunity algorithm. 
+After the final step, we'll eventually get the TCN results. 
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step4_Visualization.py

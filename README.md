@@ -106,7 +106,7 @@ The input data of the unsupervised learning part of CytoCommunity algorithm is i
 
 #### 1. Step0_Construct_KNNgraph.py
 
-Use step 0 to construct KNN gragh and prepare data for the following steps. Here comes the running procedure:
+Use step 0 to construct KNN gragh and prepare data for the following steps. Here comes the running process:
 
 ```
 (base) PS C:\Users\Lenovo> conda activate CytoCommunity

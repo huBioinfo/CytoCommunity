@@ -66,24 +66,32 @@ Conda version: 22.9.0
 
 Python version: 3.10.6
 
-R version: 3.6.0
+R version: 4.2.0
 
 #### Preparing the virtual environment 
 
 1. Create a new conda environment for the program and activate it via the commands:
 
 ```
-conda create --name CytoCommunity python=3.10.6
-conda activate CytoCommunity
+(base) conda create --name CytoCommunity python=3.10.6
+(base) conda activate CytoCommunity
 ```
 
 2. Install the dependencies in the exsiting environment directly via:
 
 ```
-conda install pandas
-conda install seaborn
-conda install pytorch cpuonly -c pytorch
-conda install pyg -c pyg
+(CytoCommunity) conda install pandas
+(CytoCommunity) conda install seaborn
+(CytoCommunity) conda install pytorch cpuonly -c pytorch
+(CytoCommunity) conda install pyg -c pyg
+```
+
+3. Install R and diceR packages via:
+
+```
+(CytoCommunity) conda install R
+(CytoCommunity) R
+> install.packages("diceR")
 ```
 
 ## Usage

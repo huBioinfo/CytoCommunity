@@ -106,7 +106,7 @@ The input data of the unsupervised learning part of CytoCommunity algorithm is i
 
 #### 1. Step0_Construct_KNNgraph.py
 
-Use step 0 to construct KNN gragh and prepare data for the following steps. Here comes the running process:
+Use step 0 to construct KNN gragh and prepare data for the following steps. Here comes the running process in the Windows Powershell:
 
 ```
 (base) PS C:\Users\Lenovo> conda activate CytoCommunity
@@ -116,7 +116,7 @@ Use step 0 to construct KNN gragh and prepare data for the following steps. Here
 
 #### 2. Step1_DataImport.py
 
-The running result of step 1 includes two folders, "processed" and "raw", with the former containing three .pt files, named pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing. 
+Step 1 is for data preprocessing, converting the input data to the standard format of torch. The running result includes two folders, "processed" and "raw", with the former containing three .pt files, named pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing. 
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step1_DataImport.py
@@ -124,7 +124,7 @@ The running result of step 1 includes two folders, "processed" and "raw", with t
 
 #### 3. Step2_SoftClusterLearning_Unsupervised.py
 
-In step 2, CytoCommunity performs soft clustering through unsupervised learning. This step generates a folder for each epoch of training that contains cluster adjacent matrix, cluster assign matrix, node mask, gragh index and the training loss file.
+In step 2, CytoCommunity performs soft clustering through unsupervised learning. This step generates a folder for each epoch of training that contains cluster adjacent matrix, cluster assign matrix, node mask, and gragh index files and a training loss file.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step2_SoftClusterLearning_Unsupervised.py
@@ -132,7 +132,7 @@ In step 2, CytoCommunity performs soft clustering through unsupervised learning.
 
 #### 4. Step3_ConsensusClustering.R
 
-Step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.csv" will be generated to show the result.
+To make the soft clustering result more robust, step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.csv" will be generated to show the result.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> R.exe
@@ -142,7 +142,7 @@ Step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.
 
 #### 5. Step4_Visualization.py
 
-Visualization of the consensus clustering is the final step of CytoCommunity algorithm. After this step, we eventually got the gragh of tissue cellular neighborhood (TCN).
+Visualization of the consensus clustering result is the final step of CytoCommunity algorithm. After this step, we eventually got the gragh of tissue cellular neighborhood(TCN).
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step4_Visualization.py
@@ -150,7 +150,7 @@ Visualization of the consensus clustering is the final step of CytoCommunity alg
 
 ### Supervised CytoCommunity
 
-The input data of the supervised learning part of CytoCommunity algorithm is information of codex colon cancer KNN graph, including a image name list and the cell type label, coordinates, edge index, gragh index, gragh label and node attributes files, seen in the folder "CODEX_ColonCancer_KNNgraph_Input".
+On the other hand, we can also use CytoCommunity algorithm through supervised learning. The input data of this part is information of codex colon cancer KNN graph, including a image name list and cell type label, coordinates, edge index, gragh index, gragh label and node attributes files, seen in the folder "CODEX_ColonCancer_KNNgraph_Input".
 
 #### 1. Step0_Construct_KNNgraph.py
 
@@ -161,7 +161,6 @@ Use step 0 to construct KNN gragh and prepare data for the following steps.
 (CytoCommunity) PS C:\Users\Lenovo> cd D:\test\CytoCommunity-main\Supervised_CytoCommunity
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step0_Construct_KNNgraph.py
 ```
-
 
 #### 2. Step1_DataImport.py
 

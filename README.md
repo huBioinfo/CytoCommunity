@@ -37,10 +37,10 @@ R version: 4.1.3
 
 ```
 (base) PS D:\test\CytoCommunity-main> conda env create -f environment.yml
-(base) PS D:\test\CytoCommunity-main> conda create --name <env_name> --file requirements.txt
+(base) PS D:\test\CytoCommunity-main> conda create --name CytoCommunity --file requirements.txt
 ```
 
-Note that the command should be executed in the parent directory of the .yml or .txt file.
+Note that the command should be executed in the parent directory of the .yml or .txt file. If you use the requirements.txt file, please convert it to UTF-8 format.
 
 2. You can also install the requirements directly in a new conda environment via:
 

@@ -112,9 +112,11 @@ CytoCommunity can be utilized through both supervised and unsupervised learning.
 
 The input data of the unsupervised learning part of CytoCommunity algorithm is information of MERFISH Brain KNN graph, including a image name list and cell type label, coordinates, edge index, gragh index and node attributes files, seen in the folder "MERFISH_Brain_KNNgraph_Input".
 
+Here comes the running process in the Windows Powershell:
+
 #### 1. Step0_Construct_KNNgraph.py
 
-Use step 0 to construct KNN gragh and prepare data for the following steps. Here comes the running process in the Windows Powershell:
+Use step 0 to construct KNN gragh and prepare data for the following steps.
 
 ```
 (base) PS C:\Users\Lenovo> conda activate CytoCommunity
@@ -159,6 +161,8 @@ Visualization of the consensus clustering result is the final step of CytoCommun
 ### Supervised CytoCommunity
 
 On the other hand, we can also use CytoCommunity algorithm through supervised learning. The input data of this part is information of codex colon cancer KNN graph, including a image name list and cell type label, coordinates, edge index, gragh index, gragh label and node attributes files, seen in the folder "CODEX_ColonCancer_KNNgraph_Input".
+
+Here comes the running process in the Windows Powershell:
 
 #### 1. Step0_Construct_KNNgraph.py
 

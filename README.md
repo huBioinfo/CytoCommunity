@@ -50,6 +50,13 @@ Note that the command should be executed in the parent directory of the .yml or 
 (CytoCommunity) PS C:\Users\Lenovo> conda install --yes --file requirements.txt
 ```
 
+3. Note that R has already been included in the requirement. And you can install package diceR via:
+
+```
+(CytoCommunity) R.exe
+> install.packages("diceR")
+```
+
 ### Linux
 
 #### Preparing the virtual environment 
@@ -70,7 +77,7 @@ Note that the command should be executed in the parent directory of the .yml or 
 (CytoCommunity) conda install pyg -c pyg
 ```
 
-3. Install R and diceR packages via:
+3. Install R and package diceR via:
 
 ```
 (CytoCommunity) conda install R
@@ -130,12 +137,6 @@ To make the soft clustering result more robust, step 3 is consensus clustering u
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> R.script Step3_ConsensusClustering.R
-```
-
-And the package diceR can be installed with:
-
-```
-install.packages("diceR")
 ```
 
 #### 5. Step4_Visualization.py

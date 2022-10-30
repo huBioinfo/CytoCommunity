@@ -136,7 +136,7 @@ In step 2, CytoCommunity performs soft clustering through unsupervised learning.
 To make the soft clustering result more robust, step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.csv" will be generated to show the result. Note that package diceR should be installed.
 
 ```
-(CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> R.script Step3_ConsensusClustering.R
+(CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> Rscript.exe Step3_ConsensusClustering.R
 ```
 
 #### 5. Step4_Visualization.py

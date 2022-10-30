@@ -13,7 +13,7 @@
 
 ## Installation
 
-#### Hardware environment 
+### Hardware environment 
 
 CPU: i7
 
@@ -21,14 +21,13 @@ Memory: 16G or more
 
 Storage: 10GB or more
 
-#### Software environment 
+### Software environment 
 
 Conda version: 22.9.0
 
 Python version: 3.10.6
 
 R version: >= 4.0 suggested
-
 
 ### Windows
 

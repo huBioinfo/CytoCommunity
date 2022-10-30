@@ -50,7 +50,7 @@ Note that the command should be executed in the parent directory of the .yml or 
 (CytoCommunity) PS C:\Users\Lenovo> conda install --yes --file requirements.txt
 ```
 
-3. You can install the package diceR (R has already been included in the requirement) via:
+3. Install package diceR (R has already been included in the requirements) via:
 
 ```
 (CytoCommunity) PS C:\Users\Lenovo> R.exe

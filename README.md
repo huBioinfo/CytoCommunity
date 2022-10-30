@@ -173,7 +173,7 @@ The running result of step 1 includes two folders, "processed" and "raw", with t
 
 #### 3. Step2_SoftClusterLearning_Supervised.py
 
-CytoCommunity uses step 2 to perform soft clustering through supervised learning. For each Fold in each Time of the training process, this step generates a folder that containes cluster adjacent matrix, cluster assign matrix, gragh index, and node mask files and a training loss file.
+CytoCommunity uses step 2 to perform soft clustering through supervised learning. For each Fold in each Time of the training process, this step generates a folder that contains cluster adjacent matrix, cluster assign matrix, gragh index, and node mask files and a training loss file.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step2_SoftClusterLearning_Supervised.py

@@ -133,7 +133,7 @@ In step 2, CytoCommunity performs soft clustering through unsupervised learning.
 
 #### 4. Step3_ConsensusClustering.R
 
-To make the soft clustering result more robust, step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.csv" will be generated to show the result. Note that package diceR should be installed.
+To make the soft clustering result more robust, step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.csv" will be generated to show the result. Note that package diceR should be installed first.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> Rscript.exe Step3_ConsensusClustering.R
@@ -181,7 +181,7 @@ CytoCommunity uses step 2 to perform soft clustering through supervised learning
 
 #### 4. Step3_ConsensusClustering.R
 
-In this step, we'll get a image collection folder that contains cluster assign matrix, node mask, gragh index and consensus label files of each Fold in each Time of the training process. 
+In this step, we'll get a image collection folder that contains cluster assign matrix, node mask, gragh index and consensus label files of each Fold in each Time of the training process. Note that package diceR should be installed first. 
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> Rscript.exe Step3_ConsensusClustering.R

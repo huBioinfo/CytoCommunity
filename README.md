@@ -50,7 +50,7 @@ Note that the command should be executed in the parent directory of the .yml or 
 (CytoCommunity) PS C:\Users\Lenovo> conda install --yes --file requirements.txt
 ```
 
-3. Install package diceR (R has already been included in the requirements) via:
+3. Install package diceR (R has already been included in the requirements) with:
 
 ```
 (CytoCommunity) PS C:\Users\Lenovo> R.exe
@@ -61,7 +61,7 @@ Note that the command should be executed in the parent directory of the .yml or 
 
 #### Preparing the virtual environment 
 
-1. Create a new conda environment for the program and activate it via the commands:
+1. Create a new conda environment for the program and activate it with the commands:
 
 ```
 (base) conda create --name CytoCommunity python=3.10.6

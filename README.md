@@ -141,7 +141,7 @@ To make the soft clustering result more robust, step 3 is consensus clustering u
 
 #### 5. Step4_Visualization.py
 
-Visualization of the consensus clustering result is the final step of CytoCommunity algorithm. After this step, we'll get the gragh of tissue cellular neighborhood(TCN).
+Visualization of the consensus clustering result is the final step of CytoCommunity algorithm. After this step, we'll eventually get the gragh of tissue cellular neighborhood(TCN).
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step4_Visualization.py
@@ -189,7 +189,7 @@ In this step, we'll get a image collection folder that contains cluster assign m
 
 #### 5. Step4_Visualization.py
 
-After the final step, we'll eventually get the TCN results. 
+After the final step, the TCN results got. 
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step4_Visualization.py

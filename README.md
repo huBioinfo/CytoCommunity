@@ -107,7 +107,7 @@ Here comes the running process in the Windows Powershell:
 
 #### 1. Step0_Construct_KNNgraph.py
 
-Use step 0 to construct KNN gragh and prepare data for the following steps.
+Use step 0 to construct KNN graghs and prepare data for the following steps.
 
 ```
 (base) PS C:\Users\Lenovo> conda activate CytoCommunity
@@ -155,7 +155,7 @@ Here comes the running process in the Windows Powershell:
 
 #### 1. Step0_Construct_KNNgraph.py
 
-Use step 0 to construct KNN gragh and prepare data for the following steps.
+Use step 0 to construct KNN graghs and prepare data for the following steps.
 
 ```
 (base) PS C:\Users\Lenovo> conda activate CytoCommunity

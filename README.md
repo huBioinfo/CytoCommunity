@@ -40,9 +40,9 @@ R version: >= 4.0 suggested
 (base) PS D:\test\CytoCommunity-main> conda create --name CytoCommunity --file requirements.txt
 ```
 
-Note that the command should be executed in the parent directory of the .yml or .txt file. If you use the requirements.txt file, please convert it to UTF-8 format.
+Note that the command should be executed in the parent directory of the .yml or .txt file. And if you use the requirements.txt, please convert it to UTF-8 format.
 
-2. You can also install the requirements directly in a new conda environment via:
+2. The requirements can also be installed directly in a new conda environment via:
 
 ```
 (base) PS C:\Users\Lenovo> conda create --name CytoCommunity pyhton=3.10.6
@@ -50,7 +50,7 @@ Note that the command should be executed in the parent directory of the .yml or 
 (CytoCommunity) PS C:\Users\Lenovo> conda install --yes --file requirements.txt
 ```
 
-3. Note that R has already been included in the requirement. And you can install package diceR via:
+3. You can install the package diceR (R has already been included in the requirement) via:
 
 ```
 (CytoCommunity) R.exe

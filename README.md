@@ -13,8 +13,6 @@
 
 ## Installation
 
-### Windows
-
 #### Hardware environment 
 
 CPU: i7
@@ -29,7 +27,10 @@ Conda version: 22.9.0
 
 Python version: 3.10.6
 
-R version: 4.1.3
+R version: >= 4.0 suggested
+
+
+### Windows
 
 #### Preparing the virtual environment
 
@@ -51,22 +52,6 @@ Note that the command should be executed in the parent directory of the .yml or 
 ```
 
 ### Linux
-
-#### Hardware environment 
-
-CPU: i7
-
-Memory: 16G or more
-
-Storage: 10GB or more
-
-#### Software environment 
-
-Conda version: 22.9.0
-
-Python version: 3.10.6
-
-R version: 4.2.0
 
 #### Preparing the virtual environment 
 

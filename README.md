@@ -53,7 +53,7 @@ Note that the command should be executed in the parent directory of the .yml or 
 3. You can install the package diceR (R has already been included in the requirement) via:
 
 ```
-(CytoCommunity) R.exe
+(CytoCommunity) PS C:\Users\Lenovo> R.exe
 > install.packages("diceR")
 ```
 
@@ -184,9 +184,7 @@ CytoCommunity uses step 2 to perform soft clustering through supervised learning
 In this step, we'll get a image collection folder that contains cluster assign matrix, node mask, gragh index and consensus label files of each Fold in each Time of the training process. 
 
 ```
-(CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> R.exe
-> install.packages("diceR")
-> source("Step3_ConsensusClustering.R")
+(CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> Rscript.exe Step3_ConsensusClustering.R
 ```
 
 #### 5. Step4_Visualization.py

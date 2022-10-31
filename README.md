@@ -40,7 +40,7 @@ R version: >= 4.0 suggested
 (base) PS D:\test\CytoCommunity-main> conda create --name CytoCommunity --file requirements.txt
 ```
 
-Note that the command should be executed in the parent directory of the .yml or .txt file. And if you use the requirements.txt, please convert it to UTF-8 format.
+Note that the command should be executed in the parent directory of the .yml or .txt file. And if you the .txt file, please convert it to UTF-8 format.
 
 2. The requirements can also be installed directly in a new conda environment via:
 
@@ -88,7 +88,7 @@ Note that the command should be executed in the parent directory of the .yml or 
 
 CytoCommunity can be utilized through both supervised and unsupervised learning. You can apply CytoCommunity algorithm in the following five steps:
 
-  1. Step0: Constructing the KNN gragh.
+  1. Step0: Constructing KNN graghs.
 
   2. Step1: Importing data.
 
@@ -100,9 +100,9 @@ CytoCommunity can be utilized through both supervised and unsupervised learning.
 
 ### Unsupervised CytoCommunity
 
-The input data of the unsupervised learning part of CytoCommunity algorithm is information of MERFISH Brain KNN graph, including a image name list and cell type label, coordinates, edge index, gragh index and node attributes files, seen in the folder "MERFISH_Brain_KNNgraph_Input".
+The input data of the unsupervised learning part of CytoCommunity algorithm is information of MERFISH Brain KNN graph, including cell type label, coordinates, edge index, gragh index and node attributes files and a image name list, seen in the folder "MERFISH_Brain_KNNgraph_Input".
 
-Here comes the running process in the Windows Powershell:
+Here comes the running process in Windows Powershell:
 
 #### 1. Step0_Construct_KNNgraph.py
 

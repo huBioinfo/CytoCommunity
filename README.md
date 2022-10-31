@@ -33,7 +33,7 @@ R version: >= 4.0 suggested
 
 #### Preparing the virtual environment
 
-1. Create a new conda environment using .yml file or .txt file with one of the commands:
+1. Create a new conda environment using .yml file or .txt file with one of the following commands:
 
 ```
 (base) PS D:\test\CytoCommunity-main> conda env create -f environment.yml

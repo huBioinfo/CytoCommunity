@@ -71,7 +71,6 @@ Note that the command should be executed in the parent directory of the .yml or 
 2. Install the dependencies in the exsiting environment directly via:
 
 ```
-(CytoCommunity) conda install pandas
 (CytoCommunity) conda install seaborn
 (CytoCommunity) conda install pytorch cpuonly -c pytorch
 (CytoCommunity) conda install pyg -c pyg

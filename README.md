@@ -150,7 +150,7 @@ Visualization of the consensus clustering result is the final step of CytoCommun
 
 On the other hand, we can also use CytoCommunity algorithm through supervised learning. The input data of this part is information of codex colon cancer KNN graph, including a image name list and cell type label, coordinates, edge index, gragh index, gragh label and node attributes files, seen in the folder "CODEX_ColonCancer_KNNgraph_Input".
 
-Here comes the running process in the Windows Powershell:
+Here comes the running process in Windows Powershell:
 
 #### 1. Step0_Construct_KNNgraph.py
 
@@ -164,7 +164,7 @@ Use step 0 to construct KNN graghs and prepare data for the following steps.
 
 #### 2. Step1_DataImport.py
 
-The running result of step 1 includes two folders, "processed" and "raw", with the former containing three .pt files, named pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing.
+Step 1 is for data preprocessing, converting the input data to the standard format of torch. The running result includes two folders, "processed" and "raw", with the former containing three .pt files, named pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step1_DataImport.py
@@ -188,7 +188,7 @@ In this step, we'll get a image collection folder that contains cluster assign m
 
 #### 5. Step4_Visualization.py
 
-After the final step, the TCN results got. 
+After the final step, TCN results got. 
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step4_Visualization.py

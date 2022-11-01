@@ -1,4 +1,5 @@
 # CytoCommunity
+for identification of tissue cellular neighborhoods (TCNs) based on cell types and their spatial distributions.
 
 ## Contents
 

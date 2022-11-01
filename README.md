@@ -65,19 +65,12 @@ Note that the command should be executed in the parent directory of the .yml or 
 
 #### Preparing the virtual environment 
 
-1. Create a new conda environment for the program and activate it with the commands:
+1. Create a new conda environment using .yml file and activate it with:
 
 ```
-(base) conda create --name CytoCommunity python=3.10.6
+(base) conda env create -f environment.yml
 (base) conda activate CytoCommunity
 ```
-
-2. Install the requirements in the exsiting environment via:
-
-```
-(CytoCommunity) conda install --yes --file requirements_linux.txt
-```
-
 3. Install R and package diceR via:
 
 ```

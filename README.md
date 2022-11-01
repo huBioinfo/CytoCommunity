@@ -11,7 +11,7 @@
 
 ## Overview
 
-
+How complex cell phenotypes organize and coordinate to support tissue functions remains poorly understood. To understand the complex tissue architecture, the concept of tissue cellular neighborhoods (TCNs) has been proposed as a recurrent functional unit in which different cell types organize and coordinate to support tissue functions. Given a dataset of tissue images from different conditions, it is critical to identify condition-specific TCNs in the images in order to discover tissue spatial structures with biological and clinical relevance. 
 
 ## Installation
 
@@ -86,7 +86,7 @@ Note that the command should be executed in the parent directory of the .yml or 
 
 ## Usage
 
-CytoCommunity can be utilized through both supervised and unsupervised learning. You can apply CytoCommunity algorithm in the following five steps:
+CytoCommunity can be utilized through either supervised or unsupervised learning. You can apply CytoCommunity algorithm in the following five steps:
 
   1. Step0: Constructing KNN graghs.
 

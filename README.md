@@ -1,4 +1,4 @@
-# CytoCommunity: a framework for identification of tissue cellular neighborhoods (TCNs) based on cell types and their spatial distributions
+# CytoCommunity: a framework for identification of tissue cellular neighborhoods based on cell types and spatial distributions
 
 ## Contents
 

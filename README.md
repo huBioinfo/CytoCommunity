@@ -2,14 +2,14 @@
 
 ## Contents
 
-- [Background](#background)
+- [Overview](#overview)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
 
-## Background
+## Overview
 
 ## Installation
 

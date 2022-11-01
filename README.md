@@ -68,12 +68,10 @@ Note that the command should be executed in the parent directory of the .yml or 
 (base) conda activate CytoCommunity
 ```
 
-2. Install the dependencies in the exsiting environment directly via:
+2. Install the requirements in the exsiting environment via:
 
 ```
-(CytoCommunity) conda install seaborn
-(CytoCommunity) conda install pytorch cpuonly -c pytorch
-(CytoCommunity) conda install pyg -c pyg
+(CytoCommunity) conda install --yes --file requirements_linux.txt
 ```
 
 3. Install R and package diceR via:

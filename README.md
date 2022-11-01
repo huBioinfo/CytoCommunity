@@ -71,7 +71,7 @@ Note that the command should be executed in the parent directory of the .yml or 
 (base) conda env create -f environment.yml
 (base) conda activate CytoCommunity
 ```
-3. Install R and package diceR via:
+2. Install R and package diceR via:
 
 ```
 (CytoCommunity) conda install R

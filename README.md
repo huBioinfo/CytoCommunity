@@ -1,4 +1,4 @@
-# CytoCommunity: a framework for identification of tissue cellular neighborhoods based on cell types and spatial distributions
+# CytoCommunity: a deep graph learning approach for identification of tissue cellular neighborhoods based on cell types and spatial distributions
 
 ## Contents
 
@@ -10,6 +10,8 @@
 - [License](#license)
 
 ## Overview
+
+
 
 ## Installation
 

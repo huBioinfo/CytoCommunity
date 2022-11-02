@@ -111,7 +111,7 @@ Use step 0 to construct KNN graghs and prepare data for the following steps.
 
 #### 2. Step1_DataImport.py
 
-Step 1 is data preprocessing to convert the input data to the standard format of torch. The running result includes two folders, "processed" and "raw", with the former containing three .pt files, named pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing. 
+Step 1 is data preprocessing to convert the input data to the standard format of torch. The running result includes two folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing. 
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step1_DataImport.py
@@ -159,7 +159,7 @@ Use step 0 to construct KNN graghs and prepare data for the following steps.
 
 #### 2. Step1_DataImport.py
 
-Step 1 is for data preprocessing, converting the input data to the standard format of torch. The running result includes two folders, "processed" and "raw", with the former containing three .pt files, named pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing.
+Step 1 is for data preprocessing, converting the input data to the standard format of torch. The running result includes two folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step1_DataImport.py

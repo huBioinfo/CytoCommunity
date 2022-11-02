@@ -89,7 +89,7 @@ CytoCommunity can be utilized in either an unsupervised or a supervised learning
 
   3. Step2: Performing soft clustering through supervised or unsupervised learning.
 
-  4. Step3: Concensus clustering.
+  4. Step3: Concensus clustering for more robust result.
 
   5. Step4: Visualization of the clustering result.
 

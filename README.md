@@ -44,7 +44,7 @@ R version: >= 4.0 suggested
 (base) PS D:\test\CytoCommunity-main> conda create --name CytoCommunity --file requirements.txt
 ```
 
-Note that the command should be executed in the parent directory of the .yml or .txt file. And if you the .txt file, please convert it to UTF-8 format.
+Note that the command should be executed in the parent directory of the .yml or .txt file. And if you use the .txt file, please convert it to UTF-8 format.
 
 2. The requirements can also be installed directly in a new conda environment via:
 

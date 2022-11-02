@@ -111,7 +111,7 @@ Use step 0 to construct KNN graghs and prepare data for the following steps.
 
 #### 2. Step1_DataImport.py
 
-Step 1 is for data preprocessing, converting the input data to the standard format of torch. The running result includes two folders, "processed" and "raw", with the former containing three .pt files, named pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing. 
+Step 1 is data preprocessing to convert the input data to the standard format of torch. The running result includes two folders, "processed" and "raw", with the former containing three .pt files, named pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing. 
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step1_DataImport.py
@@ -119,7 +119,7 @@ Step 1 is for data preprocessing, converting the input data to the standard form
 
 #### 3. Step2_SoftClusterLearning_Unsupervised.py
 
-In step 2, CytoCommunity performs soft clustering through unsupervised learning. This step generates a folder for each epoch of training that contains cluster adjacent matrix, cluster assign matrix, node mask, and gragh index files and a training loss file.
+In step 2, CytoCommunity performs soft clustering through unsupervised learning. For each epoch of the training process, step 2 generates a folder that contains cluster adjacent matrix, cluster assign matrix, node mask, and gragh index files and a training loss file.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step2_SoftClusterLearning_Unsupervised.py
@@ -127,7 +127,7 @@ In step 2, CytoCommunity performs soft clustering through unsupervised learning.
 
 #### 4. Step3_ConsensusClustering.R
 
-To make the soft clustering result more robust, step 3 is consensus clustering using R, and file "ConsensusLabel_MajorityVoting.csv" will be generated to show the result. Note that package diceR should be installed first.
+To make the soft clustering result more robust, step 3 is consensus clustering using R, with file "ConsensusLabel_MajorityVoting.csv" generated to show the result. Make sure that package diceR should be installed first.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> Rscript.exe Step3_ConsensusClustering.R

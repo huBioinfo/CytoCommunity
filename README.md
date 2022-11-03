@@ -11,9 +11,9 @@
 
 ## Overview
 
-How complex cell phenotypes organize and coordinate to support tissue functions remains poorly understood. To comprehend the complex tissue architecture, the concept of tissue cellular neighborhoods (TCNs) has been proposed. Given a dataset of tissue images from different conditions, it is critical to identify condition-specific TCNs in the images in order to discover tissue spatial structures with biological and clinical relevance. 
+How complex cell phenotypes organize and coordinate to support tissue functions remains poorly understood. To comprehend the complex tissue architecture, the concept of tissue cellular neighborhoods (TCNs) has been proposed. Thus, when given a dataset of tissue images from different conditions, it is critical to identify condition-specific TCNs in the images in order to discover tissue spatial structures with biological and clinical relevance. 
 
-We describe the CytoCommunity algorithm for identifying TCNs that can be applied in either an unsupervised or a supervised learning framework. The CytoCommunity algorithm is developed for finding tissue cellular neighborhoods (TCNs) using single-cell spatial omics data. It includes two components: a graph neural network (GNN)-based soft cluster assignment module and a consensus clustering module to determine the final TCNs.
+We describe the CytoCommunity algorithm for identifying TCNs that can be applied in either an unsupervised or a supervised learning framework using single-cell spatial omics data. It includes two components: a graph neural network (GNN)-based soft cluster assignment module and a consensus clustering module to determine the final TCNs.
 
 ## Installation
 

@@ -11,9 +11,11 @@
 
 ## Overview
 
-How complex cell phenotypes organize and coordinate to support tissue functions remains poorly understood. To comprehend the complex tissue architecture, the concept of tissue cellular neighborhoods (TCNs) has been proposed. Thus, when given a dataset of tissue images from different conditions, it is critical to identify condition-specific TCNs in the images in order to discover tissue spatial structures with biological and clinical relevance. 
+How complex cell phenotypes organize and coordinate to support tissue functions remains poorly understood. To comprehend the complex tissue architecture, the concept of tissue cellular neighborhoods (TCNs) has been proposed. And when given a dataset of tissue images from different conditions, it is critical to identify condition-specific TCNs in the images in order to discover tissue spatial structures with biological and clinical relevance. 
 
-We describe the CytoCommunity algorithm for identifying TCNs that can be applied in either an unsupervised or a supervised learning framework using single-cell spatial omics data. It includes two components: a graph neural network (GNN)-based soft cluster assignment module and a consensus clustering module to determine the final TCNs.
+We develop the CytoCommunity algorithm for identifying TCNs that can be applied in either an unsupervised or a supervised learning framework using single-cell spatial omics data. It directly uses cell types as initial features of cells to learn TCNs, which can thus be applied to both single-cell transcriptomics and proteomics data with relatively few features available and facilitates the interpretation of TCN functions at the same time. Futhermore, CytoCommunity can not only infer TCNs for single-cell spatial omics images individually but also identify condition-specific TCNs for an image dataset by leveraging graph pooling and graph (image)-level labels, which is an effective strategy to address the TCN alignment across images.
+
+CytoCommunity represents the first computational tool for identifying condition-specific TCNs in single-cell spatial maps and enables discovery of multi-cell coordination and cooperation patterns under the tissue architecture. More importantly, it is the first TCN-detection method that can be used in a supervised fashion to predict tissue image labels and identify condition-specific TCNs, facilitating the discovery of physiologically or pathologically relevant tissue structures.
 
 ## Installation
 

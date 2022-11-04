@@ -129,7 +129,7 @@ In step2, CytoCommunity performs soft clustering based on unsupervised learning.
 
 #### 4. Step3_ConsensusClustering.R
 
-To make the soft clustering result more robust, step3 performs consensus clustering using R, with file "ConsensusLabel_MajorityVoting.csv" generated to show the result. Make sure that the diceR package has been installed before step3.
+To make the soft clustering result more robust, step3 performs consensus clustering using R. The result is saved in the "ConsensusLabel_MajorityVoting.csv" file. Make sure that the diceR package has been installed before step3.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> Rscript.exe Step3_ConsensusClustering.R
@@ -137,7 +137,7 @@ To make the soft clustering result more robust, step3 performs consensus cluster
 
 #### 5. Step4_Visualization.py
 
-Visualization of the consensus clustering result is the final step of CytoCommunity algorithm. After this step, we'll eventually get the gragh of tissue cellular neighborhood(TCN).
+The consensus clustering result is summarizied and visualized in this step. After this step, we will obtain the gragh of tissue cellular neighborhood(TCN).
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step4_Visualization.py
@@ -145,9 +145,9 @@ Visualization of the consensus clustering result is the final step of CytoCommun
 
 ### Supervised CytoCommunity
 
-On the other hand, we can also use CytoCommunity algorithm through supervised learning. The input data of this part is information of codex colon cancer KNN graph, including a image name list and cell type label, coordinates, edge index, gragh index, gragh label and node attributes files, seen in the folder "CODEX_ColonCancer_KNNgraph_Input".
+We can also use CytoCommunity as a supervised learning task. The example input data to this part a KNN graph based on colon cancer CODEX data, including a image name list and cell type label, cell spatial coordinates, edge index, gragh index, gragh label and node attributes files, all of which are stored in the folder "CODEX_ColonCancer_KNNgraph_Input".
 
-Here comes the running process in Windows Powershell:
+Running steps in Windows Powershell:
 
 #### 1. Step0_Construct_KNNgraph.py
 

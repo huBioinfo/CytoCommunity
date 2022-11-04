@@ -11,7 +11,7 @@
 
 ## Overview
 
-How complex cell phenotypes organize and coordinate to support tissue functions remains poorly understood. To better understand complex tissue architecture, the concept of tissue cellular neighborhoods (TCNs) has been proposed. There is a lack of computational tools for identifying TCNs using spatial imaging data. Furthermore, given a set of images associated with different conditions, it is often desirable to identify condition-specific TCNs to better understand architectural changes across the conditions. 
+It remains poorly understood how different cell types organize and coordinate with each other to support tissue functions. To better understand complex tissue architecture, the concept of tissue cellular neighborhoods (TCNs) has been proposed. There is a lack of computational tools for identifying TCNs using spatial imaging data. Furthermore, given a set of images associated with different conditions, it is often desirable to identify condition-specific TCNs to better understand architectural changes across the conditions. 
 
 We developed the CytoCommunity algorithm for identifying TCNs. It can be applied in either an unsupervised or a supervised learning framework using single-cell spatial omics data. It directly uses cell types as features to identify TCNs, which makes it applicable to spatial imaging data with relatively few features and facilitates the interpretation of TCN functions as well. Additionally, CytoCommunity can not only infer TCNs for individual images but also identify condition-specific TCNs for a set of images by leveraging graph pooling and image labels, which effectively addresses the challenge of TCN alignment across images.
 
@@ -19,7 +19,7 @@ CytoCommunity is the first computational tool for both unsupervised and supervis
 
 ## Installation
 
-### Hardware environment 
+### Hardware requirement 
 
 CPU: i7
 
@@ -27,7 +27,7 @@ Memory: 16G or more
 
 Storage: 10GB or more
 
-### Software environment 
+### Software requirement
 
 Conda version: 22.9.0
 
@@ -46,9 +46,9 @@ R version: >= 4.0 suggested
 (base) PS D:\test\CytoCommunity-main> conda create --name CytoCommunity --file requirements.txt
 ```
 
-Note that the command should be executed in the parent directory of the .yml or .txt file. And if you use the .txt file, please convert it to UTF-8 format.
+Note that the command should be executed in the parent directory of the .yml or .txt file. And if you use the .txt file, please convert it to the UTF-8 format.
 
-2. The requirements can also be installed directly in a new conda environment via:
+2. The requirements can also be installed directly in a new conda environment:
 
 ```
 (base) PS C:\Users\Lenovo> conda create --name CytoCommunity pyhton=3.10.6
@@ -56,7 +56,7 @@ Note that the command should be executed in the parent directory of the .yml or 
 (CytoCommunity) PS C:\Users\Lenovo> conda install --yes --file requirements.txt
 ```
 
-3. Install package diceR (R has already been included in the requirements) with:
+3. Install the diceR package (R has already been included in the requirements) with the following command:
 
 ```
 (CytoCommunity) PS C:\Users\Lenovo> R.exe
@@ -67,13 +67,13 @@ Note that the command should be executed in the parent directory of the .yml or 
 
 #### Preparing the virtual environment 
 
-1. Create a new conda environment using .yml file and activate it with:
+1. Create a new conda environment using .yml file and activate it:
 
 ```
 (base) conda env create -f environment_linux.yml
 (base) conda activate CytoCommunity
 ```
-2. Install R and package diceR via:
+2. Install R and the diceR package:
 
 ```
 (CytoCommunity) conda install R
@@ -83,7 +83,7 @@ Note that the command should be executed in the parent directory of the .yml or 
 
 ## Usage
 
-CytoCommunity can be utilized in either an unsupervised or a supervised learning framework. You can apply CytoCommunity algorithm in the following five steps:
+CytoCommunity can be used in either an unsupervised or a supervised learning mode. You can apply CytoCommunity algorithm in the following five steps:
 
   1. Step0: Constructing KNN graghs.
 
@@ -97,13 +97,13 @@ CytoCommunity can be utilized in either an unsupervised or a supervised learning
 
 ### Unsupervised CytoCommunity
 
-The input data of the unsupervised learning part of CytoCommunity algorithm is information of MERFISH Brain KNN graph, including cell type label, coordinates, edge index, gragh index and node attributes files and a image name list, seen in the folder "MERFISH_Brain_KNNgraph_Input".
+The example input data to the unsupervised learning mode of CytoCommunity is a KNN graph based on mouse brain MERFISH data, including cell type labels, cell spatial coordinates, edge index, gragh index and node attributes files and an image name list. These files can be found in the folder "MERFISH_Brain_KNNgraph_Input".
 
-Here comes the running process in Windows Powershell:
+Running steps in Windows Powershell:
 
 #### 1. Step0_Construct_KNNgraph.py
 
-Use step 0 to construct KNN graghs and prepare data for the following steps.
+Use step0 to construct KNN graghs and prepare data subsequent steps.
 
 ```
 (base) PS C:\Users\Lenovo> conda activate CytoCommunity
@@ -113,7 +113,7 @@ Use step 0 to construct KNN graghs and prepare data for the following steps.
 
 #### 2. Step1_DataImport.py
 
-Step 1 is data preprocessing to convert the input data to the standard format of torch. The running result includes two folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing. 
+Step1 conducts data preprocessing to convert the input data to the standard format of torch. It produces two file folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter being an empty folder at this point. 
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step1_DataImport.py
@@ -121,7 +121,7 @@ Step 1 is data preprocessing to convert the input data to the standard format of
 
 #### 3. Step2_SoftClusterLearning_Unsupervised.py
 
-In step 2, CytoCommunity performs soft clustering through unsupervised learning. For each epoch of the training process, step 2 generates a folder that contains cluster adjacent matrix, cluster assign matrix, node mask, and gragh index files and a training loss file.
+In step2, CytoCommunity performs soft clustering based on unsupervised learning. For each epoch of the training process, step2 generates a folder that contains cluster adjacent matrix, cluster assignment matrix, node mask, and gragh index files and a training loss file.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step2_SoftClusterLearning_Unsupervised.py
@@ -129,7 +129,7 @@ In step 2, CytoCommunity performs soft clustering through unsupervised learning.
 
 #### 4. Step3_ConsensusClustering.R
 
-To make the soft clustering result more robust, step 3 is consensus clustering using R, with file "ConsensusLabel_MajorityVoting.csv" generated to show the result. Make sure that package diceR has been installed.
+To make the soft clustering result more robust, step3 performs consensus clustering using R, with file "ConsensusLabel_MajorityVoting.csv" generated to show the result. Make sure that the diceR package has been installed before step3.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> Rscript.exe Step3_ConsensusClustering.R

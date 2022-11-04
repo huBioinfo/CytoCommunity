@@ -145,13 +145,13 @@ The consensus clustering result is summarizied and visualized in this step. Afte
 
 ### Supervised CytoCommunity
 
-We can also use CytoCommunity as a supervised learning task. The example input data to this part a KNN graph based on colon cancer CODEX data, including a image name list and cell type label, cell spatial coordinates, edge index, gragh index, gragh label and node attributes files, all of which are stored in the folder "CODEX_ColonCancer_KNNgraph_Input".
+We can also run CytoCommunity as a supervised learning task. The example input data to this part a KNN graph based on colon cancer CODEX data, including a image name list and cell type label, cell spatial coordinates, edge index, gragh index, gragh label and node attributes files, all of which are stored in the folder "CODEX_ColonCancer_KNNgraph_Input".
 
 Running steps in Windows Powershell:
 
 #### 1. Step0_Construct_KNNgraph.py
 
-Use step 0 to construct KNN graghs and prepare data for the following steps.
+Use step0 to construct KNN graghs and prepare data for the subsequent steps.
 
 ```
 (base) PS C:\Users\Lenovo> conda activate CytoCommunity
@@ -161,7 +161,7 @@ Use step 0 to construct KNN graghs and prepare data for the following steps.
 
 #### 2. Step1_DataImport.py
 
-Step 1 is for data preprocessing, converting the input data to the standard format of torch. The running result includes two folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter nothing.
+Step1 conducts data preprocessing to convert the input data to the standard format of torch. It produces two file folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter being an empty folder at this point. 
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step1_DataImport.py
@@ -169,7 +169,7 @@ Step 1 is for data preprocessing, converting the input data to the standard form
 
 #### 3. Step2_SoftClusterLearning_Supervised.py
 
-CytoCommunity uses step 2 to perform soft clustering through supervised learning. For each Fold in each Time of the training process, this step generates a folder that contains cluster adjacent matrix, cluster assign matrix, gragh index, and node mask files and a training loss file.
+Step2 performs soft clustering based on supervised learning. For each fold in each round of the training process, this step generates a folder that contains cluster adjacent matrix, cluster assignment matrix, gragh index, and node mask files and a training loss file.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step2_SoftClusterLearning_Supervised.py
@@ -177,7 +177,7 @@ CytoCommunity uses step 2 to perform soft clustering through supervised learning
 
 #### 4. Step3_ConsensusClustering.R
 
-In this step, we'll get a image collection folder that contains cluster assign matrix, node mask, gragh index and consensus label files of each Fold in each Time of the training process. Note that package diceR should be installed first. 
+For each image, Step3 generates the following files: cluster assign matrix, node mask, gragh index and consensus label files of each fold in each run of the training process. Note the diceR package should be installed before this step. 
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> Rscript.exe Step3_ConsensusClustering.R
@@ -185,7 +185,7 @@ In this step, we'll get a image collection folder that contains cluster assign m
 
 #### 5. Step4_Visualization.py
 
-After the final step, TCN results got. 
+The result is summarizied and visualized in this step. After this step, we will obtain graghs of tissue cellular neighborhoods (TCNs) associated with each condition.
 
 ```
 (CytoCommunity) PS D:\test\CytoCommunity-main\Supervised_CytoCommunity> python Step4_Visualization.py

@@ -47,10 +47,9 @@ R version: >= 4.0 suggested
 
     ```bash
     conda env create -f environment.yml
-    or
+    # or
     conda create --name CytoCommunity --file requirements.txt
     ```
-
 
 Note that the command should be executed in the parent directory of the environment.yml or requirements.txt file. And if you use the .txt file, please convert it to the UTF-8 format.
 

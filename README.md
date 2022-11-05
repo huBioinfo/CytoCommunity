@@ -185,7 +185,7 @@ Step2 performs soft clustering based on supervised learning. For each fold in ea
 
 For each image, Step3 generates the following files: cluster assign matrix, node mask, gragh index and consensus label files of each fold in each run of the training process. Note the diceR package should be installed before this step. 
 
-    ```
+    ```bash
     Rscript.exe Step3_ConsensusClustering.R
     ```
 

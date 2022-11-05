@@ -1,4 +1,4 @@
-<div align=left><img width=50% height=50% src="https://github.com/huBioinfo/CytoCommunity/tree/main/support/test.png"/></div>
+<div align=left><img width=30% height=30% src="https://github.com/huBioinfo/CytoCommunity/tree/main/support/test.png"/></div>
 
 # CytoCommunity: a deep graph learning approach for identification of tissue cellular neighborhoods based on cell types and cell spatial distributions
 

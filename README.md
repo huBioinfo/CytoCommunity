@@ -1,3 +1,5 @@
+<div align=left><img width=30% height=30% src="https://github.com/xjtu-omics/SVision/blob/master/supports/svision-logo.png"/></div>
+
 # CytoCommunity: a deep graph learning approach for identification of tissue cellular neighborhoods based on cell types and cell spatial distributions
 
 ## Contents

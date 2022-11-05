@@ -80,7 +80,7 @@ Note that the command should be executed in the parent directory of the environm
     ```
 
 2. Install R and the diceR package:
-
+    
     ```bash
     conda install R
     R
@@ -111,12 +111,6 @@ Running steps in Windows Powershell:
 
 Use step0 to construct KNN graghs and prepare data subsequent steps.
 
-    ```bash
-    conda activate CytoCommunity
-    cd D:\test\CytoCommunity-main\Unsupervised_CytoCommunity
-    python Step0_Construct_KNNgraph.py
-    ```
-       
     ```bash
     conda activate CytoCommunity
     cd D:\test\CytoCommunity-main\Unsupervised_CytoCommunity

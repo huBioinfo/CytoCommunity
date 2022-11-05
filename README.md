@@ -1,4 +1,4 @@
-![header](support/Logo_CytoCommunity.png)   
+![header](support/test.png)   
 
 # CytoCommunity: a deep graph learning approach for identification of tissue cellular neighborhoods based on cell types and cell spatial distributions
 

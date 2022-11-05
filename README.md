@@ -13,6 +13,8 @@
 
 ## Overview
 
+![schematic_overview](support/schematic_overview.png)
+
 It remains poorly understood how different cell types organize and coordinate with each other to support tissue functions. To better understand complex tissue architecture, the concept of tissue cellular neighborhoods (TCNs) has been proposed. There is a lack of computational tools for identifying TCNs using spatial imaging data. Furthermore, given a set of images associated with different conditions, it is often desirable to identify condition-specific TCNs to better understand architectural changes across the conditions. 
 
 We developed the CytoCommunity algorithm for identifying TCNs. It can be applied in either an unsupervised or a supervised learning framework using single-cell spatial omics data. It directly uses cell types as features to identify TCNs, which makes it applicable to spatial imaging data with relatively few features and facilitates the interpretation of TCN functions as well. Additionally, CytoCommunity can not only infer TCNs for individual images but also identify condition-specific TCNs for a set of images by leveraging graph pooling and image labels, which effectively addresses the challenge of TCN alignment across images.
@@ -107,18 +109,18 @@ Running steps in Windows Powershell:
 
 Use step0 to construct KNN graghs and prepare data subsequent steps.
 
-```
-(base) PS C:\Users\Lenovo> conda activate CytoCommunity
-(CytoCommunity) PS C:\Users\Lenovo> cd D:\test\CytoCommunity-main\Unsupervised_CytoCommunity
-(CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step0_Construct_KNNgraph.py
-```
+    ```bash
+    conda activate CytoCommunity
+    cd D:\test\CytoCommunity-main\Unsupervised_CytoCommunity
+    python Step0_Construct_KNNgraph.py
+    ```
 
 #### 2. Step1_DataImport.py
 
 Step1 conducts data preprocessing to convert the input data to the standard format of torch. It produces two file folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter being an empty folder at this point. 
 
 ```
-(CytoCommunity) PS D:\test\CytoCommunity-main\Unsupervised_CytoCommunity> python Step1_DataImport.py
+    python Step1_DataImport.py
 ```
 
 #### 3. Step2_SoftClusterLearning_Unsupervised.py

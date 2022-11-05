@@ -39,7 +39,7 @@ Python version: 3.10.6
 
 R version: >= 4.0 suggested
 
-### Windows
+### For Windows
 
 #### Preparing the virtual environment
 
@@ -68,7 +68,7 @@ Note that the command should be executed in the parent directory of the environm
     > install.packages("diceR")
     ```
 
-### Linux
+### For Linux
 
 #### Preparing the virtual environment 
 
@@ -158,7 +158,7 @@ Running steps in Windows Powershell:
 #### 1. Step0_Construct_KNNgraph.py
 
 Use step0 to construct KNN graghs and prepare data for the subsequent steps.
- 
+
     ```bash
     conda activate CytoCommunity
     cd D:\test\CytoCommunity-main\Supervised_CytoCommunity

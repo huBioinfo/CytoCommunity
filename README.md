@@ -121,33 +121,33 @@ python Step0_Construct_KNNgraph.py
 
 Step1 conducts data preprocessing to convert the input data to the standard format of torch. It produces two file folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter being an empty folder at this point. 
 
-    ```bash
-    python Step1_DataImport.py
-    ```
+```bash
+python Step1_DataImport.py
+```
     
 #### 3. Step2_SoftClusterLearning_Unsupervised.py
 
 In step2, CytoCommunity performs soft clustering based on unsupervised learning. For each epoch of the training process, step2 generates a folder that contains cluster adjacent matrix, cluster assignment matrix, node mask, and gragh index files and a training loss file.
 
-    ```bash
-    python Step2_SoftClusterLearning_Unsupervised.py
-    ```
+```bash
+python Step2_SoftClusterLearning_Unsupervised.py
+```
 
 #### 4. Step3_ConsensusClustering.R
 
 To make the soft clustering result more robust, step3 performs consensus clustering using R. The result is saved in the "ConsensusLabel_MajorityVoting.csv" file. Make sure that the diceR package has been installed before step3.
 
-    ```bash
-    Rscript.exe Step3_ConsensusClustering.R
-    ```
+```bash
+Rscript.exe Step3_ConsensusClustering.R
+```
 
 #### 5. Step4_Visualization.py
 
 The consensus clustering result is summarizied and visualized in this step. After this step, we will obtain the gragh of tissue cellular neighborhood(TCN).
 
-    ```bash
-    python Step4_Visualization.py
-    ```
+```bash
+python Step4_Visualization.py
+```
 
 ### Supervised CytoCommunity
 
@@ -159,43 +159,43 @@ Running steps in Windows Powershell:
 
 Use step0 to construct KNN graghs and prepare data for the subsequent steps.
 
-    ```bash
-    conda activate CytoCommunity
-    cd D:\test\CytoCommunity-main\Supervised_CytoCommunity
-    python Step0_Construct_KNNgraph.py
-    ```
+```bash
+conda activate CytoCommunity
+cd D:\test\CytoCommunity-main\Supervised_CytoCommunity
+python Step0_Construct_KNNgraph.py
+```
 
 #### 2. Step1_DataImport.py
 
 Step1 conducts data preprocessing to convert the input data to the standard format of torch. It produces two file folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter being an empty folder at this point. 
 
-    ```bash
-    python Step1_DataImport.py
-    ```
+```bash
+python Step1_DataImport.py
+```
 
 #### 3. Step2_SoftClusterLearning_Supervised.py
 
 Step2 performs soft clustering based on supervised learning. For each fold in each round of the training process, this step generates a folder that contains cluster adjacent matrix, cluster assignment matrix, gragh index, and node mask files and a training loss file.
 
-    ```bash
-    python Step2_SoftClusterLearning_Supervised.py
-    ```
+```bash
+python Step2_SoftClusterLearning_Supervised.py
+```
 
 #### 4. Step3_ConsensusClustering.R
 
 For each image, Step3 generates the following files: cluster assign matrix, node mask, gragh index and consensus label files of each fold in each run of the training process. Note the diceR package should be installed before this step. 
 
-    ```bash
-    Rscript.exe Step3_ConsensusClustering.R
-    ```
+```bash
+Rscript.exe Step3_ConsensusClustering.R
+```
 
 #### 5. Step4_Visualization.py
 
 The result is summarizied and visualized in this step. After this step, we will obtain graghs of tissue cellular neighborhoods (TCNs) associated with each condition.
 
-    ```bash
-    python Step4_Visualization.py
-    ```
+```bash
+python Step4_Visualization.py
+```
 
 ## Maintainers
 

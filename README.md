@@ -111,11 +111,11 @@ Running steps in Windows Powershell:
 
 Use step0 to construct KNN graghs and prepare data for the subsequent steps.
 
-    bash
+    ```bash
     conda activate CytoCommunity
     cd D:\test\CytoCommunity-main\Unsupervised_CytoCommunity
     python Step0_Construct_KNNgraph.py
-    
+    ```
 
 #### 2. Step1_DataImport.py
 

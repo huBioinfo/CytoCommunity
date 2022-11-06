@@ -75,8 +75,8 @@ Note that the command should be executed in the parent directory of the environm
 1. Create a new conda environment using .yml file and activate it:
 
     ```bash
-    > conda env create -f environment_linux.yml
-    > conda activate CytoCommunity
+    conda env create -f environment_linux.yml
+    conda activate CytoCommunity
     ```
 
 2. Install R and the diceR package:

@@ -109,7 +109,7 @@ Running steps in Windows Powershell:
 
 #### 1. Step0_Construct_KNNgraph.py
 
-Use step0 to construct KNN graghs and prepare data subsequent steps.
+Use step0 to construct KNN graghs and prepare data for subsequent steps.
 
     ```bash
     conda activate CytoCommunity
@@ -151,7 +151,7 @@ The consensus clustering result is summarizied and visualized in this step. Afte
 
 ### Supervised CytoCommunity
 
-We can also run CytoCommunity as a supervised learning task. The example input data to this part a KNN graph based on colon cancer CODEX data, including a image name list and cell type label, cell spatial coordinates, edge index, gragh index, gragh label and node attributes files, all of which are stored in the folder "CODEX_ColonCancer_KNNgraph_Input".
+We can also run CytoCommunity as a supervised learning task. The example input data to this part is a KNN graph based on colon cancer CODEX data, including a image name list and cell type label, cell spatial coordinates, edge index, gragh index, gragh label and node attributes files, all of which are stored in the folder "CODEX_ColonCancer_KNNgraph_Input".
 
 Running steps in Windows Powershell:
 

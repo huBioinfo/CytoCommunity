@@ -107,10 +107,11 @@ The example input data to the unsupervised learning mode of CytoCommunity is a K
 
 Running steps in Windows Powershell:
 
-#### 1. Step0_Construct_KNNgraph.py
+1. Step0_Construct_KNNgraph.py
+
+Use step0 to construct KNN graghs and prepare data for the subsequent steps.
 
     ```bash
-    # Use step0 to construct KNN graghs and prepare data for the subsequent steps.
     conda activate CytoCommunity
     cd D:\test\CytoCommunity-main\Unsupervised_CytoCommunity
     python Step0_Construct_KNNgraph.py

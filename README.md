@@ -123,9 +123,7 @@ Step1 conducts data preprocessing to convert the input data to the standard form
 
     ```bash
     python Step1_DataImport.py
-    
     ```
-
 #### 3. Step2_SoftClusterLearning_Unsupervised.py
 
 In step2, CytoCommunity performs soft clustering based on unsupervised learning. For each epoch of the training process, step2 generates a folder that contains cluster adjacent matrix, cluster assignment matrix, node mask, and gragh index files and a training loss file.

@@ -13,7 +13,7 @@
 
 ## Overview
 
-![schematic_overview](support/schematic_overview.png)
+![overview](support/overview.png)
 
 It remains poorly understood how different cell types organize and coordinate with each other to support tissue functions. To better understand complex tissue architecture, the concept of tissue cellular neighborhoods (TCNs) has been proposed. There is a lack of computational tools for identifying TCNs using spatial imaging data. Furthermore, given a set of images associated with different conditions, it is often desirable to identify condition-specific TCNs to better understand architectural changes across the conditions. 
 

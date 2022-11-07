@@ -19,7 +19,7 @@ It remains poorly understood how different cell types organize and coordinate wi
 
 We developed the CytoCommunity algorithm for identifying TCNs. It can be applied in either an unsupervised or a supervised learning framework using single-cell spatial omics data. It directly uses cell types as features to identify TCNs, which makes it applicable to spatial imaging data with relatively few features and facilitates the interpretation of TCN functions as well. Additionally, CytoCommunity can not only infer TCNs for individual images but also identify condition-specific TCNs for a set of images by leveraging graph pooling and image labels, which effectively addresses the challenge of TCN alignment across images.
 
-CytoCommunity is the first computational tool for both unsupervised and supervised analyses of single-cell spatial maps and enables discovery of conditional-specific cell-cell communication patterns across variable spatial scales.
+CytoCommunity is the first computational tool for end-to-end unsupervised and supervised analyses of single-cell spatial maps and enables direct discovery of conditional-specific cell-cell communication patterns across variable spatial scales.
 
 ## Installation
 

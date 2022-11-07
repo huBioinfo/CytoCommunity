@@ -8,6 +8,6 @@ setup(
     url='https://github.com/huBioinfo/CytoCommunity',
     license='',
     maintainer='yuxuanHu',
-    description='',
+    description='CytoCommunity: a deep graph learning approach for identification of tissue cellular neighborhoods based on cell phenotypes and cell spatial distributions',
     packages=find_packages(),
 )

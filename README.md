@@ -72,7 +72,7 @@ Note that the command should be executed in the parent directory of the environm
 
 #### Preparing the virtual environment 
 
-1. Create a new conda environment using .yml file and activate it:
+1. Create a new conda environment using the environment_linux.yml file and activate it:
 
     ```bash
     conda env create -f environment_linux.yml

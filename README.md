@@ -43,7 +43,7 @@ R version: >= 4.0 suggested
 
 #### Preparing the virtual environment
 
-1. Create a new conda environment using environment.yml file or requirements.txt file with one of the following commands:
+1. Create a new conda environment using the environment.yml file or the requirements.txt file with one of the following commands:
 
     ```bash
     conda env create -f environment.yml

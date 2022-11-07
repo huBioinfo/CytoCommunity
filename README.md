@@ -99,7 +99,7 @@ CytoCommunity can be used in either an unsupervised or a supervised learning mod
 
   4. Step3: Concensus clustering for more robust result.
 
-  5. Step4: Visualization of the clustering result.
+  5. Step4: Visualization of the concensus clustering result.
 
 ### Unsupervised CytoCommunity
 

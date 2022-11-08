@@ -103,6 +103,8 @@ CytoCommunity can be used in either an unsupervised or a supervised learning mod
 
 ### Unsupervised CytoCommunity
 
+The CytoCommunity algorithm for identifying tissue cellular neighborhoods (TCNs) consists of two components: a soft TCN assignment learning module and a TCN ensemble procedure to determine the final robust TCNs.
+
 The example input data to the unsupervised learning mode of CytoCommunity is a KNN graph based on mouse brain MERFISH data, including cell type labels, cell spatial coordinates, edge index, gragh index and node attributes files and an image name list. These files can be found in the folder "MERFISH_Brain_KNNgraph_Input".
 
 Running steps in Windows Powershell:
@@ -151,7 +153,9 @@ python Step4_Visualization.py
 
 ### Supervised CytoCommunity
 
-We can also run CytoCommunity as a supervised learning task. The example input data to this part is a KNN graph based on colon cancer CODEX data, including a image name list and cell type label, cell spatial coordinates, edge index, gragh index, gragh label and node attributes files, all of which are stored in the folder "CODEX_ColonCancer_KNNgraph_Input".
+We can also run CytoCommunity as a supervised learning task. Given a dataset of multiple spatial omics images from different conditions, TCNs can be first identified for each image and then aligned across images for identifying condition-specific TCNs. However, TCN alignment is analogous to community alignment in graphs, which is NP-hard. To tackle this problem, we take advantage of graph pooling to generate an embedding representation of the whole graph that preserves the TCN partition information.
+
+The example input data to this part is a KNN graph based on colon cancer CODEX data, including a image name list and cell type label, cell spatial coordinates, edge index, gragh index, gragh label and node attributes files, all of which are stored in the folder "CODEX_ColonCancer_KNNgraph_Input".
 
 Running steps in Windows Powershell:
 

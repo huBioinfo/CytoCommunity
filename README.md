@@ -89,7 +89,7 @@ Note that the command should be executed in the parent directory of the environm
     
 ## Usage
 
-The CytoCommunity algorithm that can be used in either an unsupervised or a supervised learning mode for TCNs identification consists of two components: a soft TCN assignment learning module and a TCN ensemble procedure to determine the final robust TCNs.
+The CytoCommunity algorithm for TCNs indentification can be used in either an unsupervised or a supervised learning mode. It consists of two components: a soft TCN assignment learning module and a TCN ensemble procedure to determine the final robust TCNs.
 
 You can apply CytoCommunity algorithm in the following five steps:
 

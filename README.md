@@ -89,7 +89,9 @@ Note that the command should be executed in the parent directory of the environm
     
 ## Usage
 
-CytoCommunity can be used in either an unsupervised or a supervised learning mode. You can apply CytoCommunity algorithm in the following five steps:
+CytoCommunity can be used in either an unsupervised or a supervised learning mode. The CytoCommunity algorithm for TCNs identification consists of two components: a soft TCN assignment learning module and a TCN ensemble procedure to determine the final robust TCNs.
+
+You can apply CytoCommunity algorithm in the following five steps:
 
   1. Step0: Constructing KNN graghs.
 
@@ -102,8 +104,6 @@ CytoCommunity can be used in either an unsupervised or a supervised learning mod
   5. Step4: Visualization of the concensus clustering result.
 
 ### Unsupervised CytoCommunity
-
-The CytoCommunity algorithm for TCNs identification consists of two components: a soft TCN assignment learning module and a TCN ensemble procedure to determine the final robust TCNs.
 
 The example input data to the unsupervised learning mode of CytoCommunity is a KNN graph based on mouse brain MERFISH data, including cell type labels, cell spatial coordinates, edge index, gragh index and node attributes files and an image name list. These files can be found in the folder "MERFISH_Brain_KNNgraph_Input".
 

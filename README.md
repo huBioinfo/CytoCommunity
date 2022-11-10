@@ -153,7 +153,7 @@ python Step4_Visualization.py
 
 ### Supervised CytoCommunity
 
-We can also run CytoCommunity as a supervised learning task. Given a dataset of multiple spatial omics images from different conditions, TCNs can be first identified for each image and then aligned across images for identifying condition-specific TCNs. However, TCN alignment is analogous to community alignment in graphs, which is NP-hard. To tackle this problem, we take advantage of graph pooling to generate an embedding representation of the whole graph that preserves the TCN partition information.
+We can also run CytoCommunity as a supervised learning task. Given a dataset of multiple spatial omics images from different conditions, TCNs can be first identified for each image and then aligned across images for identifying condition-specific TCNs. However, TCN alignment is NP-hard. To tackle this problem, we take advantage of graph pooling to generate an embedding representation of the whole graph that preserves the TCN partition information. By adapting the unsupervised graph partitioning model to a graph convolution and pooling-based graph classification framework, TCNs in different images are automatically aligned during soft TCN assignment learning, facilitating the identification of condition-specific TCNs.
 
 The example input data to this part is a KNN graph based on colon cancer CODEX data, including a image name list and cell type label, cell spatial coordinates, edge index, gragh index, gragh label and node attributes files, all of which are stored in the folder "CODEX_ColonCancer_KNNgraph_Input".
 

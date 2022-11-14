@@ -107,7 +107,7 @@ You can apply CytoCommunity algorithm in the following five steps:
 
 The example input data to the unsupervised learning mode of CytoCommunity is a KNN graph based on mouse brain MERFISH data, including cell type labels, cell spatial coordinates, edge index, gragh index and node attributes files and an image name list. These files can be found in the folder "MERFISH_Brain_KNNgraph_Input".
 
-Running steps in Windows Powershell:
+Running steps in Windows Powershell or Linux Bash shell:
 
 #### 1. Step0_Construct_KNNgraph.py
 
@@ -140,7 +140,7 @@ python Step2_SoftClusterLearning_Unsupervised.py
 To make the soft clustering result more robust, step3 performs consensus clustering using R. The result is saved in the "ConsensusLabel_MajorityVoting.csv" file. Make sure that the diceR package has been installed before step3.
 
 ```bash
-Rscript.exe Step3_ConsensusClustering.R
+Rscript Step3_ConsensusClustering.R
 ```
 
 #### 5. Step4_Visualization.py
@@ -157,7 +157,7 @@ We can also run CytoCommunity as a supervised learning task. Given a dataset of 
 
 The example input data to this part is a KNN graph based on colon cancer CODEX data, including a image name list and cell type label, cell spatial coordinates, edge index, gragh index, gragh label and node attributes files, all of which are stored in the folder "CODEX_ColonCancer_KNNgraph_Input".
 
-Running steps in Windows Powershell:
+Running steps in Windows Powershell or Linux Bash shell:
 
 #### 1. Step0_Construct_KNNgraph.py
 
@@ -190,7 +190,7 @@ python Step2_SoftClusterLearning_Supervised.py
 For each image, Step3 generates the following files: cluster assign matrix, node mask, gragh index and consensus label files of each fold in each run of the training process. Note the diceR package should be installed before this step. 
 
 ```bash
-Rscript.exe Step3_ConsensusClustering.R
+Rscript Step3_ConsensusClustering.R
 ```
 
 #### 5. Step4_Visualization.py

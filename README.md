@@ -1,6 +1,6 @@
 ![header](support/logo.png)   
 
-# CytoCommunity: a deep graph learning approach for identification of tissue cellular neighborhoods based on cell phenotypes and cell spatial distributions
+# Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes with CytoCommunity
 
 ## Contents
 
@@ -203,9 +203,11 @@ python Step4_Visualization.py
 
 ## Maintainers
 
-[@HuBioinfo](https://github.com/huBioinfo)(huyuxuan@xidian.edu.cn)
+Yafei Xu(22031212416@stu.xidian.edu.cn)
 
-[@yafeixu-xidian](https://github.com/yafeixu-xidian)(22031212416@stu.xidian.edu.cn)
+Yuxuan Hu (huyuxuan@xidian.edu.cn)
+
+Kai Tan (tank1@chop.edu)
 
 ## Contributing
 

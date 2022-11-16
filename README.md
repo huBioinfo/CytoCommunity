@@ -93,25 +93,23 @@ The CytoCommunity algorithm for TCN indentification can be used in either an uns
 
 You can apply CytoCommunity algorithm in the following five steps:
 
-  1. Step0: Constructing KNN graghs.
+  Step0: Constructing KNN graghs.
 
-  2. Step1: Importing data.
+  Step1: Importing data.
 
-  3. Step2: Performing soft clustering through supervised or unsupervised learning.
+  Step2: Performing soft clustering through supervised or unsupervised learning.
 
-  4. Step3: Concensus clustering for more robust result.
+  Step3: Concensus clustering for more robust result.
 
-  5. Step4: Visualization of the concensus clustering result.
+  Step4: Visualization of the concensus clustering result.
 
 ### Unsupervised CytoCommunity
 
 The example input data to the unsupervised learning mode of CytoCommunity is a KNN graph based on mouse brain MERFISH data, including cell type labels, cell spatial coordinates, edge index, gragh index and node attributes files and an image name list. These files can be found in the folder "MERFISH_Brain_KNNgraph_Input".
 
-Running steps in Windows Powershell or Linux Bash shell:
+Run steps in Windows Powershell or Linux Bash shell:
 
-#### 1. Step0_Construct_KNNgraph.py
-
-Use step0 to construct KNN graghs and prepare data for the subsequent steps.
+#### 1. Use step0 to construct KNN graghs and prepare data for the subsequent steps.
 
 ```bash
 conda activate CytoCommunity
@@ -119,33 +117,33 @@ cd D:\test\CytoCommunity-main\Unsupervised_CytoCommunity
 python Step0_Construct_KNNgraph.py
 ```
 
-#### 2. Step1_DataImport.py
+#### 2. Use Step1 to perform data preprocessing to convert the input data to the standard format of torch.
 
-Step1 conducts data preprocessing to convert the input data to the standard format of torch. It produces two file folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter being an empty folder at this point. 
+This step produces two file folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter being an empty folder at this point. 
 
 ```bash
 python Step1_DataImport.py
 ```
     
-#### 3. Step2_SoftClusterLearning_Unsupervised.py
+#### 3. Use Step2 to perform soft TCN assignment learning in an unsupervised fashion.
 
-In step2, CytoCommunity performs soft clustering based on unsupervised learning. For each epoch of the training process, step2 generates a folder that contains cluster adjacent matrix, cluster assignment matrix, node mask, and gragh index files and a training loss file.
+This step generates a folder for each run that contains a cluster adjacent matrix, a cluster assignment matrix, a node mask, a gragh index file and a loss recording file.
 
 ```bash
 python Step2_SoftClusterLearning_Unsupervised.py
 ```
 
-#### 4. Step3_ConsensusClustering.R
+#### 4. Use Step3 to perform TCN assignment ensemble.
 
-To make the soft clustering result more robust, step3 performs consensus clustering using R. The result is saved in the "ConsensusLabel_MajorityVoting.csv" file. Make sure that the diceR package has been installed before step3.
+The result of this step will be saved in the "ConsensusLabel_MajorityVoting.csv" file. Make sure that the diceR package has been installed before Step3.
 
 ```bash
 Rscript Step3_ConsensusClustering.R
 ```
 
-#### 5. Step4_Visualization.py
+#### 5. Use Step4 to visualize final TCN partitions.
 
-The consensus clustering result is summarizied and visualized in this step. After this step, we will obtain the gragh of tissue cellular neighborhood(TCN).
+After this step, we will obtain a single-cell saptial map colored by identified TCNs.
 
 ```bash
 python Step4_Visualization.py

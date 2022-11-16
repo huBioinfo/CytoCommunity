@@ -107,9 +107,9 @@ You can apply CytoCommunity algorithm in the following five steps:
 
 The example input data to the unsupervised learning mode of CytoCommunity is a KNN graph based on mouse brain MERFISH data, including cell type labels, cell spatial coordinates, edge index, gragh index and node attributes files and an image name list. These files can be found in the folder "MERFISH_Brain_KNNgraph_Input".
 
-Run steps in Windows Powershell or Linux Bash shell:
+Run following steps in Windows Powershell or Linux Bash shell:
 
-#### 1. Use step0 to construct KNN graghs and prepare data for the subsequent steps.
+#### 1. Use Step0 to construct KNN graghs and prepare data for the subsequent steps.
 
 ```bash
 conda activate CytoCommunity
@@ -151,15 +151,13 @@ python Step4_Visualization.py
 
 ### Supervised CytoCommunity
 
-We can also run CytoCommunity as a supervised learning task. Given a dataset of multiple spatial omics images from different conditions, TCNs can be first identified for each image and then aligned across images for identifying condition-specific TCNs. However, TCN alignment is NP-hard. To tackle this problem, we take advantage of graph pooling to generate an embedding representation of the whole graph that preserves the TCN partition information. By adapting the unsupervised graph partitioning model to a graph convolution and pooling-based graph classification framework, TCNs in different images are automatically aligned during soft TCN assignment learning, facilitating the identification of condition-specific TCNs.
+We can also run CytoCommunity in a supervised learning task. Given a dataset of multiple spatial omics images from different conditions, TCNs can be first identified for each image and then aligned across images for identifying condition-specific TCNs. However, TCN alignment is analogous to community alignment in graphs, which is NP-hard. To tackle this problem, we take advantage of graph pooling to generate an embedding representation of the whole graph that preserves the TCN partition information. By adapting the unsupervised graph partitioning model to a graph convolution and pooling-based graph classification framework, TCNs in different images are automatically aligned during soft TCN assignment learning, facilitating the identification of condition-specific TCNs.
 
-The example input data to this part is a KNN graph based on colon cancer CODEX data, including a image name list and cell type label, cell spatial coordinates, edge index, gragh index, gragh label and node attributes files, all of which are stored in the folder "CODEX_ColonCancer_KNNgraph_Input".
+The example input data of this part is a KNN graph constructed based on colon cancer CODEX data, including a image name list and cell type label, cell spatial coordinate, edge index, gragh index, gragh label and node attribute files, all of which are stored in the folder "CODEX_ColonCancer_KNNgraph_Input".
 
-Running steps in Windows Powershell or Linux Bash shell:
+Run following steps in Windows Powershell or Linux Bash shell:
 
-#### 1. Step0_Construct_KNNgraph.py
-
-Use step0 to construct KNN graghs and prepare data for the subsequent steps.
+#### 1. Use step0 to construct KNN graghs and prepare data for the subsequent steps.
 
 ```bash
 conda activate CytoCommunity
@@ -167,23 +165,23 @@ cd D:\test\CytoCommunity-main\Supervised_CytoCommunity
 python Step0_Construct_KNNgraph.py
 ```
 
-#### 2. Step1_DataImport.py
+#### 2. Use Step1 to perform data preprocessing to convert the input data to the standard format of torch.
 
-Step1 conducts data preprocessing to convert the input data to the standard format of torch. It produces two file folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter being an empty folder at this point. 
+This step produces two file folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter being an empty folder at this point. 
 
 ```bash
 python Step1_DataImport.py
 ```
 
-#### 3. Step2_SoftClusterLearning_Supervised.py
+#### 3. Use Step2 to perform soft TCN assignment learning in a supervised fashion.
 
-Step2 performs soft clustering based on supervised learning. For each fold in each round of the training process, this step generates a folder that contains cluster adjacent matrix, cluster assignment matrix, gragh index, and node mask files and a training loss file.
+For each fold in each round of the training process, this step generates a folder that contains cluster adjacent matrix, cluster assignment matrix, gragh index, and node mask files and a training loss file.
 
 ```bash
 python Step2_SoftClusterLearning_Supervised.py
 ```
 
-#### 4. Step3_ConsensusClustering.R
+#### 4. Use Step3 to perform TCN assignment ensemble.
 
 For each image, Step3 generates the following files: cluster assign matrix, node mask, gragh index and consensus label files of each fold in each run of the training process. Note the diceR package should be installed before this step. 
 
@@ -191,9 +189,9 @@ For each image, Step3 generates the following files: cluster assign matrix, node
 Rscript Step3_ConsensusClustering.R
 ```
 
-#### 5. Step4_Visualization.py
+#### 5. Use Step4 to visualize final TCN partitions.
 
-The result is summarizied and visualized in this step. After this step, we will obtain graghs of tissue cellular neighborhoods (TCNs) associated with each condition.
+After this step, we will obtain single-cell spatial maps colored by identified TCNs associated with image conditions/labels.
 
 ```bash
 python Step4_Visualization.py

@@ -10,6 +10,7 @@
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
 - [License](#license)
+- [Citation](#citation)
 
 ## Overview
 
@@ -204,6 +205,12 @@ Yafei Xu(22031212416@stu.xidian.edu.cn)
 Yuxuan Hu (huyuxuan@xidian.edu.cn)
 
 Kai Tan (tank1@chop.edu)
+
+## Citation
+
+* Hu Y, Rong J, Xie R, Xu Y, Peng J, Gao L, Tan K. Learning predictive models of tissue cellular neighborhoods from cell phenotypes with graph pooling. *bioRxiv*, 2022.
+ 
+    https://www.biorxiv.org/content/10.1101/2022.11.06.515344v1
 
 ## Contributing
 

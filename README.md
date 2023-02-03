@@ -8,9 +8,8 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Maintainers](#maintainers)
-- [Contributing](#contributing)
-- [License](#license)
 - [Citation](#citation)
+- [Contributing](#contributing)
 
 ## Overview
 
@@ -216,5 +215,4 @@ Kai Tan (tank1@chop.edu)
 
 Feel free to dive in!
 
-## License
 

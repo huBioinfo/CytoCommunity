@@ -9,5 +9,5 @@ CytoCommunity - Unsupervised and supervised discovery of tissue cellular neighbo
 .. toctree::
    :maxdepth: 1
 
-   Tutorial 1
-   Tutorial 2
+   CytoCommunity_Tutorials/Tutorial 1
+   CytoCommunity_Tutorials/Tutorial 2

@@ -103,7 +103,7 @@ You can apply CytoCommunity algorithm in the following five steps:
 
   Step4: Visualization of the concensus clustering result.
 
-See [Documentation and Tutorials](https://cytocommunity.readthedocs.io/en/latest/index.html).
+You can see [Documentation and Tutorials](https://cytocommunity.readthedocs.io/en/latest/index.html) to get easier start.
 
 ### Unsupervised CytoCommunity
 

@@ -44,7 +44,6 @@ Clone this repository and cd into it.
 git clone https://github.com/huBioinfo/CytoCommunity.git
 cd CytoCommunity/
 ```
-
 ### For Windows
 
 #### Preparing the virtual environment

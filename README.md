@@ -42,7 +42,7 @@ R version: >= 4.0 suggested
 Clone this repository and cd into it.
 ```
 git clone https://github.com/huBioinfo/CytoCommunity.git
-cd CytoCommunity/
+cd CytoCommunity
 ```
 ### For Windows
 

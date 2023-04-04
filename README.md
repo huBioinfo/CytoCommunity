@@ -39,6 +39,12 @@ Python version: 3.10.6
 
 R version: >= 4.0 suggested
 
+Clone this repository and cd into it.
+```
+git clone https://github.com/huBioinfo/CytoCommunity.git
+cd CytoCommunity/
+```
+
 ### For Windows
 
 #### Preparing the virtual environment

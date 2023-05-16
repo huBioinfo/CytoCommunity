@@ -1,6 +1,6 @@
 ![header](support/logo.png)   
 
-# Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes with CytoCommunity(v1.0.0)
+# Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes with CytoCommunity
 
 ## Contents
 

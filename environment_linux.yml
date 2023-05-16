@@ -68,7 +68,7 @@ dependencies:
   - nettle=3.7.3=hbbd107a_1
   - numexpr=2.8.3=py310hcea2de6_0
   - numpy=1.23.3=py310hd5efca6_0
-  - numpy-base=1.23.3=py310h8e6c178_0
+  - numpy-base=1.23.3=py310h8e6c178_1
   - openh264=2.1.1=h4ff587b_0
   - openssl=1.1.1q=h7f8727e_0
   - packaging=21.3=pyhd3eb1b0_0

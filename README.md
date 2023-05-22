@@ -58,7 +58,7 @@ cd CytoCommunity
     conda create --name CytoCommunity --file requirements.txt
     ```
 
-Note that the command should be executed in the parent directory of the environment.yml or requirements.txt file. And if you use the .txt file, please convert it to the UTF-8 format.
+Note that the command should be executed in the directory containing the environment.yml or requirements.txt file. And if you use the .txt file, please convert it to the UTF-8 format.
 
 2. The requirements can also be installed directly in a new conda environment:
 

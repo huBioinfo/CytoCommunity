@@ -68,7 +68,7 @@ Alternatively, the requirements can also be installed directly in a new conda en
     conda install --yes --file requirements.txt
     ```
 
-3. Install the diceR package (R has already been included in the requirements) with the following command:
+2. Install the diceR package (R has already been included in the requirements) with the following command:
 
     ```bash
     R.exe

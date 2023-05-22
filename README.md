@@ -100,15 +100,15 @@ The CytoCommunity algorithm for TCN indentification can be used in either an uns
 
 You can apply CytoCommunity algorithm in the following five steps:
 
-  Step0: Constructing KNN graghs.
+ - Step0: Constructing KNN graghs.
 
-  Step1: Importing data.
+ - Step1: Importing data.
 
-  Step2: Performing soft clustering through supervised or unsupervised learning.
+ - Step2: Performing soft clustering through supervised or unsupervised learning.
 
-  Step3: Concensus clustering for more robust result.
+ - Step3: Concensus clustering for more robust result.
 
-  Step4: Visualization of the concensus clustering result.
+ - Step4: Visualization of the concensus clustering result.
 
 You can see [Documentation and Tutorials](https://cytocommunity.readthedocs.io/en/latest/index.html) to get easier start. The corresponding code and data can be found in the folder "Tutorial".
 

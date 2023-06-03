@@ -170,7 +170,7 @@ Run following steps in Windows Powershell or Linux Bash shell:
 ```bash
 conda activate CytoCommunity
 cd Tutorial/Supervised_CytoCommunity
-python Step0_Construct_KNNgraph.py    Tutorial
+python Step0_Construct_KNNgraph.py 
 
 
 ```

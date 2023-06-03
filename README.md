@@ -103,11 +103,11 @@ You can apply CytoCommunity algorithm in the following five steps:
 
  - Step1: Importing data.
 
- - Step2: Performing soft clustering through supervised or unsupervised learning.
+ - Step2: Performing soft TCN asssignment for cells through supervised or unsupervised learning.
 
- - Step3: Concensus clustering for more robust result.
+ - Step3: Conducting TCN ensemble for more robust result.
 
- - Step4: Visualization of the concensus clustering result.
+ - Step4: Visualization of the final TCN map.
 
 You can see [Documentation and Tutorials](https://cytocommunity.readthedocs.io/en/latest/index.html) to get easier start. The corresponding code and data can be found in the folder "Tutorial".
 
@@ -121,7 +121,7 @@ Run following steps in Windows Powershell or Linux Bash shell:
 
 ```bash
 conda activate CytoCommunity
-cd Tutorial/Unsupervised_CytoCommunity
+cd Tutorial/Unsupervised_MERFISH
 python Step0_Construct_KNNgraph.py
 ```
 
@@ -169,7 +169,7 @@ Run following steps in Windows Powershell or Linux Bash shell:
 
 ```bash
 conda activate CytoCommunity
-cd Tutorial/Supervised_CytoCommunity
+cd Tutorial/Supervised_MIBI_TNBC
 python Step0_Construct_KNNgraph.py 
 
 

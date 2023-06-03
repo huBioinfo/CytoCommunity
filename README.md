@@ -121,7 +121,7 @@ Run following steps in Windows Powershell or Linux Bash shell:
 
 ```bash
 conda activate CytoCommunity
-cd D:\test\CytoCommunity-main\Unsupervised_CytoCommunity
+cd Tutorial/Unsupervised_CytoCommunity
 python Step0_Construct_KNNgraph.py
 ```
 
@@ -169,8 +169,10 @@ Run following steps in Windows Powershell or Linux Bash shell:
 
 ```bash
 conda activate CytoCommunity
-cd D:\test\CytoCommunity-main\Supervised_CytoCommunity
-python Step0_Construct_KNNgraph.py
+cd Tutorial/Supervised_CytoCommunity
+python Step0_Construct_KNNgraph.py    Tutorial
+
+
 ```
 
 #### 2. Use Step1 to perform data preprocessing to convert the input data to the standard format of torch.

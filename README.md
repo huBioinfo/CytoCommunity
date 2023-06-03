@@ -138,7 +138,7 @@ python Step1_DataImport.py
 This step generates a folder for each run that contains a cluster adjacent matrix, a cluster assignment matrix, a node mask, a gragh index file and a loss recording file.
 
 ```bash
-python Step2_SoftClusterLearning_Unsupervised.py
+python Step2_SoftTCNLearning_Unsupervised.py
 ```
 
 #### 4. Use Step3 to perform TCN assignment ensemble.
@@ -146,7 +146,7 @@ python Step2_SoftClusterLearning_Unsupervised.py
 The result of this step will be saved in the "ConsensusLabel_MajorityVoting.csv" file. Make sure that the diceR package has been installed before Step3.
 
 ```bash
-Rscript Step3_ConsensusClustering.R
+Rscript Step3_TCN_Ensemble.R
 ```
 
 #### 5. Use Step4 to visualize final TCN partitions.
@@ -188,7 +188,7 @@ python Step1_DataImport.py
 For each fold in each round of the training process, this step generates a folder that contains cluster adjacent matrix, cluster assignment matrix, gragh index, and node mask files and a training loss file.
 
 ```bash
-python Step2_SoftClusterLearning_Supervised.py
+python Step2_SoftTCNLearning_Supervised.py
 ```
 
 #### 4. Use Step3 to perform TCN assignment ensemble.
@@ -196,7 +196,7 @@ python Step2_SoftClusterLearning_Supervised.py
 For each image, Step3 generates the following files: cluster assign matrix, node mask, gragh index and consensus label files of each fold in each run of the training process. Note the diceR package should be installed before this step. 
 
 ```bash
-Rscript Step3_ConsensusClustering.R
+Rscript Step3_TCN_Ensemble.R
 ```
 
 #### 5. Use Step4 to visualize final TCN partitions.

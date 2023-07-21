@@ -2,7 +2,7 @@
 
 # Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes with CytoCommunity
 
-This is version 1.0.0. You can easily download it at [https://github.com/huBioinfo/CytoCommunity/tags](https://github.com/huBioinfo/CytoCommunity/tags).
+
 
 ## Contents
 

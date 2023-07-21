@@ -21,7 +21,7 @@ Num_TCN = 2
 Num_Epoch = 100
 Num_Dimension = 512
 LearningRate = 0.0001
-MinBatchSize = 16
+MiniBatchSize = 16
 
 ## Load dataset from constructed Dataset.
 class SpatialOmicsImageDataset(InMemoryDataset):
@@ -154,7 +154,7 @@ for num_time in range(1, 11):  #10 times of k-fold cross-validation.
         test_dataset = dataset[test_list]
         #train_dataset = list(set(dataset).difference(set(test_dataset)))
         train_dataset = dataset[train_list]
-        train_loader = DenseDataLoader(train_dataset, batch_size=MinBatchSize, shuffle=True)  #batch_size=16 is specific to TNBC 34 images.
+        train_loader = DenseDataLoader(train_dataset, batch_size=MiniBatchSize, shuffle=True)  #batch_size=16 is specific to TNBC 34 images.
         test_loader = DenseDataLoader(test_dataset, batch_size=1)
         #start_point = n * num_fold
 

@@ -108,7 +108,7 @@ You can apply CytoCommunity algorithm in the following five steps:
 
  - Step4: Visualization of the final TCN map.
 
-You can see [Documentation and Tutorials](https://cytocommunity.readthedocs.io/en/latest/index.html) to get easier start. The corresponding code and data can be found in the folder "Tutorial".
+You can see [Documentation and Tutorials](https://cytocommunity.readthedocs.io/en/latest/index.html) to get easier start and also reproduce TCN partitions shown in the paper. The associated code and data can be found in the folder "Tutorial".
 
 ### Unsupervised CytoCommunity
 

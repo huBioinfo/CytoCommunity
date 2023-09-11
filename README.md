@@ -40,7 +40,7 @@ Python version: 3.10.6
 
 R version: >= 4.0 suggested
 
-Clone this repository and cd into it.
+Clone this repository (v1.0.0) and cd into it, or directly download this CytoCommunity version at https://github.com/huBioinfo/CytoCommunity/releases/tag/v1.0.0
 ```
 git clone https://github.com/huBioinfo/CytoCommunity.git
 cd CytoCommunity

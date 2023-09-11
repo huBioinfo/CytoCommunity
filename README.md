@@ -11,7 +11,6 @@
 - [Usage](#usage)
 - [Maintainers](#maintainers)
 - [Citation](#citation)
-- [Contributing](#contributing)
 
 ## Overview
 
@@ -115,9 +114,9 @@ You can see [Documentation and Tutorials](https://cytocommunity.readthedocs.io/e
 
 The example input data to the unsupervised learning mode of CytoCommunity is a KNN graph based on mouse brain MERFISH data, including cell type labels, cell spatial coordinates, edge index, gragh index and node attributes files and an image name list. These files can be found in the folder "MERFISH_Brain_KNNgraph_Input".
 
-Run following steps in Windows Powershell or Linux Bash shell:
+Run the following steps in Windows Powershell or Linux Bash shell:
 
-#### 1. Use Step0 to construct KNN graghs and prepare data for the subsequent steps.
+#### 0. Use Step0 to construct KNN graghs and prepare data for the subsequent steps.
 
 ```bash
 conda activate CytoCommunity
@@ -125,7 +124,7 @@ cd Tutorial/Unsupervised_MERFISH
 python Step0_Construct_KNNgraph.py
 ```
 
-#### 2. Use Step1 to perform data preprocessing to convert the input data to the standard format of torch.
+#### 1. Use Step1 to perform data preprocessing to convert the input data to the standard format of torch.
 
 This step produces two file folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter being an empty folder at this point. 
 
@@ -133,7 +132,7 @@ This step produces two file folders, "processed" and "raw", with the former cont
 python Step1_DataImport.py
 ```
     
-#### 3. Use Step2 to perform soft TCN assignment learning in an unsupervised fashion.
+#### 2. Use Step2 to perform soft TCN assignment learning in an unsupervised fashion.
 
 This step generates a folder for each run that contains a cluster adjacent matrix, a cluster assignment matrix, a node mask, a gragh index file and a loss recording file.
 
@@ -141,7 +140,7 @@ This step generates a folder for each run that contains a cluster adjacent matri
 python Step2_SoftTCNLearning_Unsupervised.py
 ```
 
-#### 4. Use Step3 to perform TCN assignment ensemble.
+#### 3. Use Step3 to perform TCN assignment ensemble.
 
 The result of this step will be saved in the "ConsensusLabel_MajorityVoting.csv" file. Make sure that the diceR package has been installed before Step3.
 
@@ -149,7 +148,7 @@ The result of this step will be saved in the "ConsensusLabel_MajorityVoting.csv"
 Rscript Step3_TCN_Ensemble.R
 ```
 
-#### 5. Use Step4 to visualize final TCN partitions.
+#### 4. Use Step4 to visualize final TCN partitions.
 
 After this step, we will obtain a single-cell saptial map colored by identified TCNs.
 
@@ -161,21 +160,19 @@ python Step4_Visualization.py
 
 We can also run CytoCommunity in a supervised learning task. Given a dataset of multiple spatial omics images from different conditions, TCNs can be first identified for each image and then aligned across images for identifying condition-specific TCNs. However, TCN alignment is analogous to community alignment in graphs, which is NP-hard. To tackle this problem, we take advantage of graph pooling to generate an embedding representation of the whole graph that preserves the TCN partition information. By adapting the unsupervised graph partitioning model to a graph convolution and pooling-based graph classification framework, TCNs in different images are automatically aligned during soft TCN assignment learning, facilitating the identification of condition-specific TCNs.
 
-The example input data of this part is a KNN graph constructed based on colon cancer CODEX data, including a image name list and cell type label, cell spatial coordinate, edge index, gragh index, gragh label and node attribute files, all of which are stored in the folder "CODEX_ColonCancer_KNNgraph_Input".
+The example input data of this part is a KNN graph constructed based on triple-negative breast cancer MIBI-TOF data, including a image name list and cell type label, cell spatial coordinate, edge index, gragh index, gragh label and node attribute files, all of which are stored in the folder "MIBI_TNBC_KNNgraph_Input".
 
-Run following steps in Windows Powershell or Linux Bash shell:
+Run the following steps in Windows Powershell or Linux Bash shell:
 
-#### 1. Use step0 to construct KNN graghs and prepare data for the subsequent steps.
+#### 0. Use step0 to construct KNN graghs and prepare data for the subsequent steps.
 
 ```bash
 conda activate CytoCommunity
 cd Tutorial/Supervised_MIBI_TNBC
 python Step0_Construct_KNNgraph.py 
-
-
 ```
 
-#### 2. Use Step1 to perform data preprocessing to convert the input data to the standard format of torch.
+#### 1. Use Step1 to perform data preprocessing to convert the input data to the standard format of torch.
 
 This step produces two file folders, "processed" and "raw", with the former containing three .pt files, named as pre_filter, pre_transform and SpatialOmicsImageDataset, and the latter being an empty folder at this point. 
 
@@ -183,7 +180,7 @@ This step produces two file folders, "processed" and "raw", with the former cont
 python Step1_DataImport.py
 ```
 
-#### 3. Use Step2 to perform soft TCN assignment learning in a supervised fashion.
+#### 2. Use Step2 to perform soft TCN assignment learning in a supervised fashion.
 
 For each fold in each round of the training process, this step generates a folder that contains cluster adjacent matrix, cluster assignment matrix, gragh index, and node mask files and a training loss file.
 
@@ -191,7 +188,7 @@ For each fold in each round of the training process, this step generates a folde
 python Step2_SoftTCNLearning_Supervised.py
 ```
 
-#### 4. Use Step3 to perform TCN assignment ensemble.
+#### 3. Use Step3 to perform TCN assignment ensemble.
 
 For each image, Step3 generates the following files: cluster assign matrix, node mask, gragh index and consensus label files of each fold in each run of the training process. Note the diceR package should be installed before this step. 
 
@@ -199,7 +196,7 @@ For each image, Step3 generates the following files: cluster assign matrix, node
 Rscript Step3_TCN_Ensemble.R
 ```
 
-#### 5. Use Step4 to visualize final TCN partitions.
+#### 4. Use Step4 to visualize final TCN partitions.
 
 After this step, we will obtain single-cell spatial maps colored by identified TCNs associated with image conditions/labels.
 
@@ -220,9 +217,5 @@ Kai Tan (tank1@chop.edu)
 * Hu Y, Rong J, Xie R, Xu Y, Peng J, Gao L, Tan K. Learning predictive models of tissue cellular neighborhoods from cell phenotypes with graph pooling. *bioRxiv*, 2022.
  
     https://www.biorxiv.org/content/10.1101/2022.11.06.515344v1
-
-## Contributing
-
-Feel free to dive in!
 
 

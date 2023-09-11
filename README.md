@@ -57,7 +57,7 @@ cd CytoCommunity
     conda create --name CytoCommunity --file requirements.txt
     ```
 
-Note that the command should be executed in the directory containing the environment.yml or requirements.txt file. And if you use the .txt file, please convert it to the UTF-8 format. Installation should take around 8 minutes.
+Note that the command should be executed in the directory containing the environment.yml or requirements.txt file. And if you use the .txt file, please convert it to the UTF-8 format.
 
 Alternatively, the requirements can also be installed directly in a new conda environment: 
 ```
@@ -91,6 +91,8 @@ conda install --yes --file requirements.txt
     R
     > install.packages("diceR")
     ```
+
+The whole installation should take less than 20 minutes.
     
 ## Usage
 
@@ -155,6 +157,7 @@ After this step, we will obtain a single-cell saptial map colored by identified 
 ```bash
 python Step4_Visualization.py
 ```
+The running time for a sample in this dataset should take around 12 minutes.
 
 ### Supervised CytoCommunity
 
@@ -203,6 +206,7 @@ After this step, we will obtain single-cell spatial maps colored by identified T
 ```bash
 python Step4_Visualization.py
 ```
+The running time of 10-fold cross validation for this dataset should take around 53 minutes.
 
 ## Maintainers
 

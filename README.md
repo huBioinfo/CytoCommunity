@@ -10,7 +10,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Maintainers](#maintainers)
-- [Citation](#citation)
+- [Citation and References](#citation)
 
 
 ## Overview
@@ -18,7 +18,7 @@
 <div align=center><img src="https://github.com/huBioinfo/CytoCommunity/blob/main/support/Schematic_Diagram.png" width="650" height="650" alt="pipline"/></div>  
 
 
-It remains poorly understood how different cells in a tissue organize and coordinate with each other to support tissue functions. To better understand the structure-function relationship of a tissue, the concept of tissue cellular neighborhoods (TCNs) or spatial domains as well as their identification tools have been proposed. However, we found **several limitations** as below.
+It remains poorly understood how different cells in a tissue organize and coordinate with each other to support tissue functions. To better understand the structure-function relationship of a tissue, the concept of **tissue cellular neighborhoods (TCNs) or spatial domains** as well as their identification tools have been proposed. However, we found **several limitations** as below.
 
 (1) Most existing methods are originally designed for spatial transcriptomics data and thus use expression of hundreds or thousands of genes as features to infer TCNs. Such methods may not be applicable to spatial proteomics data that only have a few tens of protein expression features available.
 
@@ -173,11 +173,11 @@ python Step4_ResultVisualization.py
 - InputFolderName: The folder name of your input dataset, consistent with Step1.
 - Image_Name: The name of the sample/image on which you want to identify TCNs, consistent with Step2.
 
-### Unsupervised CytoCommunity
+### Supervised CytoCommunity
 
 #### Prepare input data
 
-The example input data to the unsupervised learning mode of CytoCommunity is derived from a mouse brain MERFISH dataset generated in [2], including **three types of files: (1) cell type label and (2) cell spatial coordinate files for each sample/image, as well as (3) an image name list file**. These example input files can be found under the directory "Tutorial/Unsupervised/MERFISH-Brain_Input/".
+The example input data to the supervised learning mode of CytoCommunity is derived from a triple-negative breast cancer (TNBC) MIBI-TOF dataset generated in [3], including **four types of files: (1) cell type label and (2) cell spatial coordinate and (3) graph (sample) label files for each sample/image, as well as (4) an image name list file**. These example input files can be found under the directory "Tutorial/Supervised/MIBI-TNBC_Input/".
 
 Note that the naming fashion of the three types of files cannot be changed when using your own data. These files should be named as **"[image name]_CellTypeLabel.txt", "[image name]_Coordinates.txt" and "ImageNameList.txt"**. Here, [image_name] should be consistent with your customized image names listed in the "ImageNameList.txt". The "[image name]_CellTypeLabel.txt" and "[image name]_Coordinates.txt" list cell type names and cell coordinates (tab-delimited x/y) of all cells in an image, respectively. The cell orders should be exactly the same across the two files.
 
@@ -244,10 +244,12 @@ Yafei Xu (22031212416@stu.xidian.edu.cn)
 Kai Tan (tank1@chop.edu)
 
 
-## Citation
+## Citation and References
 
-[1] Yuxuan Hu, Jiazhen Rong, Yafei Xu, Runzhi Xie, Jacqueline Peng, Lin Gao, Kai Tan. Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes. *Nature Methods*, 2024.
+[1] Yuxuan Hu, Jiazhen Rong, Yafei Xu, Runzhi Xie, Jacqueline Peng, Lin Gao, Kai Tan. Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes. **Nature Methods**, 2024.
     
-[2] Moffitt J R, Bambah-Mukku D, Eichhorn S W, et al. Molecular, spatial, and functional single-cell profiling of the hypothalamic preoptic region[J]. Science, 2018, 362(6416): eaau5324.
+[2] Moffitt J R, Bambah-Mukku D, Eichhorn S W, et al. Molecular, spatial, and functional single-cell profiling of the hypothalamic preoptic region. **Science**, 2018, 362(6416): eaau5324.
+
+[3] Leeat Keren, Marc Bosse, Diana Marquez, et al. A structured tumor-immune microenvironment in triple negative breast cancer revealed by multiplexed ion beam imaging. **Cell**, 2018, 174: 1373-1387.
 
 

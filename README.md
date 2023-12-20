@@ -104,7 +104,7 @@ conda install --yes --file requirements.txt
     > install.packages("diceR")
     ```
 
-The whole installation should take less than 20 minutes.
+The whole installation should take around 20 minutes.
 
 
 ## Usage
@@ -172,20 +172,80 @@ python Step4_ResultVisualization.py
 - InputFolderName: The folder name of your input dataset, consistent with Step1.
 - Image_Name: The name of the sample/image on which you want to identify TCNs, consistent with Step2.
 
+### Unsupervised CytoCommunity
+
+#### Prepare input data
+
+The example input data to the unsupervised learning mode of CytoCommunity is derived from a mouse brain MERFISH dataset generated in [2], including **three types of files: (1) cell type label and (2) cell spatial coordinate files for each sample/image, as well as (3) an image name list file**. These example input files can be found under the directory "Tutorial/Unsupervised/MERFISH-Brain_Input/".
+
+Note that the naming fashion of the three types of files cannot be changed when using your own data. These files should be named as **"[image name]_CellTypeLabel.txt", "[image name]_Coordinates.txt" and "ImageNameList.txt"**. Here, [image_name] should be consistent with your customized image names listed in the "ImageNameList.txt". The "[image name]_CellTypeLabel.txt" and "[image name]_Coordinates.txt" list cell type names and cell coordinates (tab-delimited x/y) of all cells in an image, respectively. The cell orders should be exactly the same across the two files.
+
+#### Run the following steps in Windows Powershell or Linux Bash shell:
+
+#### 1. Use Step1 to construct KNN-based cellular spatial graghs and convert the input data to the standard format required by Torch.
+
+This step generates a folder "Step1_Output" including constructed cellular spatial graphs of all samples/images in your input dataset folder (e.g., /MERFISH-Brain_Input/). No need to re-run this step for different images.
+
+```bash
+conda activate CytoCommunity
+cd Tutorial/Unsupervised
+python Step1_ConstructCellularSpatialGraphs.py
+```
+&ensp;&ensp;**Hyperparameters**
+- InputFolderName: The folder name of your input dataset.
+- KNN_K: The K value used in the construction of the K nearest neighbor graph (cellular spatial graph) for each sample/image. This value can be empirically set to the integer closest to the square root of the average number of cells in the images in your dataset.
+
+#### 2. Use Step2 to perform soft TCN assignment learning in an unsupervised fashion.
+
+This step generates a folder "Step2_Output_[specified image name]" including multiple runs (subfolders) of soft TCN assignment learning module. Each subfolder contains a cluster adjacent matrix, a cluster assignment matrix, a node mask file and a loss recording file. You need to re-run this step for different images by changing the hyperparameter "Image_Name".
+
+```bash
+python Step2_TCNLearning_Unsupervised.py
+```
+&ensp;&ensp;**Hyperparameters**
+- InputFolderName: The folder name of your input dataset, consistent with Step1.
+- Image_Name: The name of the sample/image on which you want to identify TCNs.
+- Num_TCN: The maximum number of TCNs you expect to identify.
+- Num_Run: How many times to run the soft TCN assignment learning module in order to obtain robust results. [Default=20]
+- Num_Epoch: The number of training epochs. This value can be smaller than the default value [3000] for the large image (e.g., more than 10,000 cells).
+- Embedding_Dimension: The dimension of the embedding features for each cell. [Default=128]
+- Learning_Rate: This parameter determines the step size at each iteration while moving toward a minimum of a loss function. [Default=1E-4]
+- Loss_Cutoff: An empirical cutoff of the final loss to avoid underfitting. This value can be larger than the default value [-0.6] for the large image (e.g., more than 10,000 cells).
+
+#### 3. Use Step3 to perform TCN assignment ensemble.
+
+The result of this step is saved in the "Step3_Output_[specified image name]/TCNLabel_MajorityVoting.csv" file. Make sure that the diceR package has been installed before Step3. You need to re-run this step for different images by changing the hyperparameter "Image_Name".
+
+```bash
+Rscript Step3_TCNEnsemble.R
+```
+&ensp;&ensp;**Hyperparameters**
+- Image_Name: The name of the sample/image on which you want to identify TCNs, consistent with Step2.
+
+#### 4. Use Step4 to visualize single-cell spatial maps colored based on cell type annotations and final TCN partitions.
+
+This step generates a folder "Step4_Output_[specified image name]" including two single-cell saptial maps (in PNG and PDF formats) colored by input cell type annotations and identified TCNs, respectively. You need to re-run this step for different images by changing the hyperparameter "Image_Name".
+
+```bash
+python Step4_ResultVisualization.py
+```
+&ensp;&ensp;**Hyperparameters**
+- InputFolderName: The folder name of your input dataset, consistent with Step1.
+- Image_Name: The name of the sample/image on which you want to identify TCNs, consistent with Step2.
+
 
 ## Maintainers
 
-Yafei Xu (22031212416@stu.xidian.edu.cn)
-
 Yuxuan Hu (huyuxuan@xidian.edu.cn)
+
+Yafei Xu (22031212416@stu.xidian.edu.cn)
 
 Kai Tan (tank1@chop.edu)
 
 
 ## Citation
 
-[1] Hu Y, Rong J, Xie R, Xu Y, Peng J, Gao L, Tan K. Learning predictive models of tissue cellular neighborhoods from cell phenotypes with graph pooling. *bioRxiv*, 2022.
-    https://www.biorxiv.org/content/10.1101/2022.11.06.515344v1
+[1] Yuxuan Hu, Jiazhen Rong, Yafei Xu, Runzhi Xie, Jacqueline Peng, Lin Gao, Kai Tan. Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes. *Nature Methods*, 2024.
     
 [2] Moffitt J R, Bambah-Mukku D, Eichhorn S W, et al. Molecular, spatial, and functional single-cell profiling of the hypothalamic preoptic region[J]. Science, 2018, 362(6416): eaau5324.
 

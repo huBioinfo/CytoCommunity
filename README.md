@@ -24,7 +24,7 @@ It remains poorly understood how different cells in a tissue organize and coordi
 
 (2) Using gene expression data as input cannot directly establish the relationship between cell types and TCNs in a tissue, making the interpretation of TCNs challenging.
 
-(3) Given a cohort of tissue samples associated with different conditions (e.g., disease risk and patient prognosis), it is important to identify condition-specific TCNs with more biological and clinical relevance (e.g. tertiary lymphoid structure (TLS), which is typically present in low-risk but not in high-risk patients of many cancer types). Most existing methods are designed to detect TCNs in individual tissue samples by unsupervised learning and thus not applicable for the identification of condition-specific TCNs de novo. 
+(3) Given a cohort of tissue samples associated with different conditions (e.g., disease risk and patient prognosis), it is important to identify condition-specific TCNs with more biological and clinical relevance (e.g., tertiary lymphoid structure (TLS), which is typically present in low-risk but not in high-risk patients of many cancer types). Most existing methods are designed to detect TCNs in individual tissue samples by unsupervised learning and thus not applicable for the identification of condition-specific TCNs de novo. 
 
 We developed this tool, named **CytoCommunity**, for identifying TCNs that can be applied in **either unsupervised or supervised** fashion. We formulate TCN identification as a community detection problem on graphs and employ a graph neural network (GNN) model to identify TCNs. **Several advantages** include:
 
@@ -32,7 +32,7 @@ We developed this tool, named **CytoCommunity**, for identifying TCNs that can b
 
 (2) CytoCommunity can not only infer TCNs for individual samples (unsupervised mode), but also identify condition-specific TCNs from a cohort of labeled tissue samples by leveraging differentiable graph pooling and sample labels (supervised mode), which is an effective strategy to address the difficulty of graph alignment across samples.
 
-**CytoCommunity is the first computational tool for end-to-end unsupervised and supervised analyses of single-cell spatial omics maps and enables discovery of conditional-specific cell-cell communication patterns across variable spatial scales.**
+**CytoCommunity represents the first computational tool for end-to-end unsupervised and supervised analyses of single-cell spatial omics maps and enables discovery of conditional-specific cell-cell communication patterns across variable spatial scales.**
 
 
 ## Installation

@@ -15,7 +15,8 @@
 
 ## Overview
 
-<div align=center><img src="https://github.com/huBioinfo/CytoCommunity-Beta_v1.1.0/blob/main/support/Schematic_Diagram.png" width="650" height="650" alt="pipline"/></div>  
+<div align=center><img src="https://github.com/huBioinfo/CytoCommunity/blob/main/support/Schematic_Diagram.png" width="650" height="650" alt="pipline"/></div>  
+
 
 It remains poorly understood how different cells in a tissue organize and coordinate with each other to support tissue functions. To better understand the structure-function relationship of a tissue, the concept of tissue cellular neighborhoods (TCNs) or spatial domains as well as multiple analysis tools have been proposed. However, we found **several limitations** as below.
 

@@ -1,4 +1,4 @@
-![image](https://github.com/huBioinfo/CytoCommunity/assets/46051984/59a61cca-2759-4466-beea-71e86c3aba97)![header](support/logo.png)   
+![header](support/logo.png)   
 
 # Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes with CytoCommunity
 

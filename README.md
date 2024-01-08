@@ -137,7 +137,7 @@ python Step1_ConstructCellularSpatialGraphs.py
 
 #### 2. Use Step2 to perform soft TCN assignment learning in an unsupervised fashion.
 
-This step generates a folder "Step2_Output_[specified image name]" including multiple runs (subfolders) of soft TCN assignment learning module. Each subfolder contains a cluster adjacent matrix, a cluster assignment matrix, a node mask file and a loss recording file. You need to re-run this step for different images by changing the hyperparameter "Image_Name".
+This step generates a folder "Step2_Output_[specified image name]" including multiple runs (subfolders) of soft TCN assignment learning module. Each subfolder contains a cluster adjacent matrix, a cluster assignment matrix (soft TCN assignment matrix), a node mask file and a loss recording file. You need to re-run this step for different images by changing the hyperparameter "Image_Name".
 
 ```bash
 python Step2_TCNLearning_Unsupervised.py
@@ -164,7 +164,7 @@ Rscript Step3_TCNEnsemble.R
 
 #### 4. Use Step4 to visualize single-cell spatial maps colored based on cell type annotations and final TCN partitions.
 
-This step generates a folder "Step4_Output_[specified image name]" including two single-cell saptial maps (in PNG and PDF formats) colored by input cell type annotations and identified TCNs, respectively. You need to re-run this step for different images by changing the hyperparameter "Image_Name".
+This step generates a folder "Step4_Output_[specified image name]" including two plots of this single-cell spatial map (in PNG and PDF formats) colored by input cell type annotations and identified TCNs, respectively. A "ResultTable_[specified image name].csv" file is also genereated to store the detailed information of this single-cell spatial map. You need to re-run this step for different images by changing the hyperparameter "Image_Name".
 
 ```bash
 python Step4_ResultVisualization.py
@@ -196,43 +196,42 @@ python Step1_ConstructCellularSpatialGraphs.py
 - InputFolderName: The folder name of your input dataset.
 - KNN_K: The K value used in the construction of the K nearest neighbor graph (cellular spatial graph) for each sample/image. This value can be empirically set to the integer closest to the square root of the average number of cells in the images in your dataset.
 
-#### 2. Use Step2 to perform soft TCN assignment learning in an unsupervised fashion.
+#### 2. Use Step2 to perform soft TCN assignment learning in a supervised fashion.
 
-This step generates a folder "Step2_Output_[specified image name]" including multiple runs (subfolders) of soft TCN assignment learning module. Each subfolder contains a cluster adjacent matrix, a cluster assignment matrix, a node mask file and a loss recording file. You need to re-run this step for different images by changing the hyperparameter "Image_Name".
+This step generates a folder "Step2_Output", including resuls ("Time" folder) of running the soft TCN assignment learning module using the 10 times of 10-fold cross-validation fashion. Each "Time" folder contains results ("Fold" folder) of one time of 10-fold cross-validation. Each "Fold" folder contains cluster assignemnt matrix (soft TCN assignment matrix) files for all images.
 
 ```bash
-python Step2_TCNLearning_Unsupervised.py
+python Step2_TCNLearning_Supervised.py
 ```
 &ensp;&ensp;**Hyperparameters**
-- InputFolderName: The folder name of your input dataset, consistent with Step1.
-- Image_Name: The name of the sample/image on which you want to identify TCNs.
 - Num_TCN: The maximum number of TCNs you expect to identify.
-- Num_Run: How many times to run the soft TCN assignment learning module in order to obtain robust results. [Default=20]
-- Num_Epoch: The number of training epochs. This value can be smaller than the default value [3000] for the large image (e.g., more than 10,000 cells).
-- Embedding_Dimension: The dimension of the embedding features for each cell. [Default=128]
-- Learning_Rate: This parameter determines the step size at each iteration while moving toward a minimum of a loss function. [Default=1E-4]
-- Loss_Cutoff: An empirical cutoff of the final loss to avoid underfitting. This value can be larger than the default value [-0.6] for the large image (e.g., more than 10,000 cells).
+- Num_Times: How many times to run the cross-vadlidation independently. [Default=10]
+- Num_Folds: The k value in the k-fold cross-validation. [Default=10]
+- Num_Epoch: The number of training epochs. [Default=100]
+- Embedding_Dimension: The dimension of the embedding features for each cell. [Default=512]
+- MiniBatchSize: This value is commonly set to be powers of 2 due to efficiency consideration. In the meantime, this value is suggested to be closest to half sizes of the training sets. [Default=16]
+- Learning_Rate: This parameter determines the step size at each iteration while moving toward a minimum of a loss function and should be increased with the mini-batch size increase. [Default=1E-4]
+- beta: A weight parameter to balance the MinCut loss used for graph partitioning and the cross-entropy loss used for graph classification. The default value is set to [0.9] due to emphasis on graph partitioning.
 
 #### 3. Use Step3 to perform TCN assignment ensemble.
 
-The result of this step is saved in the "Step3_Output_[specified image name]/TCNLabel_MajorityVoting.csv" file. Make sure that the diceR package has been installed before Step3. You need to re-run this step for different images by changing the hyperparameter "Image_Name".
+The results of this step are saved under the "Step3_Output/ImageCollection/" directory. A "TCNLabel_MajorityVoting.csv" file will be generated for each image. Make sure that the diceR package has been installed before Step3.
 
 ```bash
 Rscript Step3_TCNEnsemble.R
 ```
 &ensp;&ensp;**Hyperparameters**
-- Image_Name: The name of the sample/image on which you want to identify TCNs, consistent with Step2.
+- InputFolderName: The folder name of your input dataset, consistent with Step1.
 
 #### 4. Use Step4 to visualize single-cell spatial maps colored based on cell type annotations and final TCN partitions.
 
-This step generates a folder "Step4_Output_[specified image name]" including two single-cell saptial maps (in PNG and PDF formats) colored by input cell type annotations and identified TCNs, respectively. You need to re-run this step for different images by changing the hyperparameter "Image_Name".
+This step generates a folder "Step4_Output" including three subfolders. The "CellType_Plot" subfolder stores single-cell spatial maps of all images (in PNG and PDF formats) colored by input cell type annotations. The "TCN_Plot" subfolder stores single-cell spatial maps of all images (in PNG and PDF formats) colored by identified TCNs. The "ResultTable_File" subfolder stores detailed information of single-cell spatial maps of all images in CSV format.
 
 ```bash
 python Step4_ResultVisualization.py
 ```
 &ensp;&ensp;**Hyperparameters**
 - InputFolderName: The folder name of your input dataset, consistent with Step1.
-- Image_Name: The name of the sample/image on which you want to identify TCNs, consistent with Step2.
 
 
 ## Maintainers
@@ -248,7 +247,7 @@ Kai Tan (tank1@chop.edu)
 
 [1] Yuxuan Hu, Jiazhen Rong, Yafei Xu, Runzhi Xie, Jacqueline Peng, Lin Gao, Kai Tan. Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes. **Nature Methods**, 2024.
     
-[2] Moffitt J R, Bambah-Mukku D, Eichhorn S W, et al. Molecular, spatial, and functional single-cell profiling of the hypothalamic preoptic region. **Science**, 2018, 362(6416): eaau5324.
+[2] Jeffrey R. Moffitt, Dhananjay Bambah-Mukku, Stephen W. Eichhorn, et al. Molecular, spatial, and functional single-cell profiling of the hypothalamic preoptic region. **Science**, 2018, 362(6416): eaau5324.
 
 [3] Leeat Keren, Marc Bosse, Diana Marquez, et al. A structured tumor-immune microenvironment in triple negative breast cancer revealed by multiplexed ion beam imaging. **Cell**, 2018, 174: 1373-1387.
 

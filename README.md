@@ -35,7 +35,7 @@ We developed this tool, named **CytoCommunity**, for identifying TCNs that can b
 
 **CytoCommunity represents the first computational tool for end-to-end unsupervised and supervised analyses of single-cell spatial omics maps and enables discovery of conditional-specific cell-cell communication patterns across variable spatial scales.**
 
-This version (main branch) is CytoCommunity V1.1.0. Please refer to https://github.com/huBioinfo/CytoCommunity/releases for previous versions. 
+This latest version (main branch) is CytoCommunity V1.1.0. Please refer to https://github.com/huBioinfo/CytoCommunity/releases for previous versions. 
 
 
 ## Installation

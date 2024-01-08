@@ -179,17 +179,17 @@ python Step4_ResultVisualization.py
 
 The example input data to the supervised learning mode of CytoCommunity is derived from a triple-negative breast cancer (TNBC) MIBI-TOF dataset generated in [3], including **four types of files: (1) cell type label and (2) cell spatial coordinate and (3) graph (sample) label files for each sample/image, as well as (4) an image name list file**. These example input files can be found under the directory "Tutorial/Supervised/MIBI-TNBC_Input/".
 
-Note that the naming fashion of the three types of files cannot be changed when using your own data. These files should be named as **"[image name]_CellTypeLabel.txt", "[image name]_Coordinates.txt", "[image name]_GraphLabel.txt" and "ImageNameList.txt"**. Here, [image_name] should be consistent with your customized image names listed in the "ImageNameList.txt". The "[image name]_CellTypeLabel.txt" and "[image name]_Coordinates.txt" list cell type names and cell coordinates (tab-delimited x/y) of all cells in an image, respectively. The cell orders should be exactly the same across the two files. The "[image name]_GraphLabel.txt" lists the graph/sample/image label and should be an integer like "0", "1", etc.
+Note that the naming fashion of the three types of files cannot be changed when using your own data. These files should be named as **"[image name]_CellTypeLabel.txt", "[image name]_Coordinates.txt", "[image name]_GraphLabel.txt" and "ImageNameList.txt"**. Here, [image_name] should be consistent with your customized image names listed in the "ImageNameList.txt". The "[image name]_CellTypeLabel.txt" and "[image name]_Coordinates.txt" list cell type names and cell coordinates (tab-delimited x/y) of all cells in an image, respectively. The cell orders should be exactly the same across the two files. Different from unsupervised version, supervised CytoCommunity requires the "[image name]_GraphLabel.txt", where lists an integer (like "0", "1", "2", etc) to describe the graph/sample/image label.
 
 #### Run the following steps in Windows Powershell or Linux Bash shell:
 
 #### 1. Use Step1 to construct KNN-based cellular spatial graghs and convert the input data to the standard format required by Torch.
 
-This step generates a folder "Step1_Output" including constructed cellular spatial graphs of all samples/images in your input dataset folder (e.g., /MERFISH-Brain_Input/). No need to re-run this step for different images.
+This step generates a folder "Step1_Output" including constructed cellular spatial graphs of all samples/images in your input dataset folder (e.g., /MIBI-TNBC_Input/).
 
 ```bash
 conda activate CytoCommunity
-cd Tutorial/Unsupervised
+cd Tutorial/Supervised
 python Step1_ConstructCellularSpatialGraphs.py
 ```
 &ensp;&ensp;**Hyperparameters**

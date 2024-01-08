@@ -253,7 +253,7 @@ Kai Tan (tank1@chop.edu)
 
 ## Citation and References
 
-[1] Yuxuan Hu, Jiazhen Rong, Yafei Xu, Runzhi Xie, Jacqueline Peng, Lin Gao, Kai Tan. Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes. **Nature Methods**, 2024.
+[1] Yuxuan Hu, Jiazhen Rong, Yafei Xu, Runzhi Xie, Jacqueline Peng, Lin Gao, Kai Tan. Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes. **Nature Methods**, 2024, https://doi.org/10.1038/s41592-023-02124-2.
     
 [2] Jeffrey R. Moffitt, Dhananjay Bambah-Mukku, Stephen W. Eichhorn, et al. Molecular, spatial, and functional single-cell profiling of the hypothalamic preoptic region. **Science**, 2018, 362(6416): eaau5324.
 

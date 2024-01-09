@@ -201,7 +201,7 @@ python Step1_ConstructCellularSpatialGraphs.py
 
 #### 2. Use Step2 to perform soft TCN assignment learning in a supervised fashion.
 
-This step generates a folder "Step2_Output", including resuls ("Time" folder) of running the soft TCN assignment learning module using the 10 times of 10-fold cross-validation fashion. Each "Time" folder contains results ("Fold" folder) of one time of 10-fold cross-validation. Each "Fold" folder contains cluster assignemnt matrix (soft TCN assignment matrix) files for all images.
+This step generates a folder "Step2_Output", including results ("Time" folder) of running the soft TCN assignment learning module using the 10 times of 10-fold cross-validation fashion. Each "Time" folder contains results ("Fold" folder) of one time of 10-fold cross-validation. Each "Fold" folder contains cluster assignemnt matrix (soft TCN assignment matrix) files for all images.
 
 ```bash
 python Step2_TCNLearning_Supervised.py

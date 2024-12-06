@@ -75,18 +75,11 @@ cd CytoCommunity
 
     ```bash
     conda env create -f environment.yml
-    # or
-    conda create --name CytoCommunity --file requirements.txt
     ```
 
-Note that the command should be executed in the directory containing the environment.yml or requirements.txt file. And if you use the .txt file, please convert it to the UTF-8 format.
+Note that the command should be executed in the directory containing the environment.yml file. And if you use the .txt file, please convert it to the UTF-8 format.
 
-Alternatively, the requirements can also be installed directly in a new conda environment: 
-```
-conda create --name CytoCommunity pyhton=3.10.6
-conda activate CytoCommunity
-conda install --yes --file requirements.txt
-```
+
 
 2. Install the diceR package (R has already been included in the requirements) with the following command:
 
@@ -250,12 +243,11 @@ python Step4_ResultVisualization.py
 
 ## Maintainers
 
-Yuxuan Hu (huyuxuan@xidian.edu.cn)
-
 Yafei Xu (22031212416@stu.xidian.edu.cn)
 
 Kai Tan (tank1@chop.edu)
 
+Yuxuan Hu (huyuxuan@xidian.edu.cn)
 
 ## Citation
 

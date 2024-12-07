@@ -77,8 +77,7 @@ cd CytoCommunity
     conda env create -f environment.yml
     ```
 
-
-Or create a new conda environment using the environment_windows_gpu.yml file with the following commands:
+    Or create a new conda environment using the environment_windows_gpu.yml file with the following commands:
 
     ```bash
     conda env create -f environment_windows_gpu.yml
@@ -105,7 +104,7 @@ Note that the command should be executed in the directory containing the environ
     conda activate CytoCommunity
     ```
 
-Or create a new conda environment using the environment_linux_gpu.yml file with the following commands:
+    Or create a new conda environment using the environment_linux_gpu.yml file with the following commands:
 
     ```bash
     conda env create -f environment_linux_gpu.yml

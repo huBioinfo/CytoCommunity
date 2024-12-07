@@ -77,8 +77,14 @@ cd CytoCommunity
     conda env create -f environment.yml
     ```
 
-Note that the command should be executed in the directory containing the environment.yml file. And if you use the .txt file, please convert it to the UTF-8 format.
 
+Or create a new conda environment using the environment_windows_gpu.yml file with the following commands:
+
+    ```bash
+    conda env create -f environment_windows_gpu.yml
+    ```
+
+Note that the command should be executed in the directory containing the environment.yml file. And if you use the .txt file, please convert it to the UTF-8 format.
 
 
 2. Install the diceR package (R has already been included in the requirements) with the following command:
@@ -98,6 +104,13 @@ Note that the command should be executed in the directory containing the environ
     conda env create -f environment_linux.yml
     conda activate CytoCommunity
     ```
+
+Or create a new conda environment using the environment_linux_gpu.yml file with the following commands:
+
+    ```bash
+    conda env create -f environment_linux_gpu.yml
+    ```
+
 
 2. Install R and the diceR package:
     
@@ -242,6 +255,7 @@ python Step4_ResultVisualization.py
 
 
 ## Maintainers
+Liukang Wu (yetong@stu.xidian.edu.cn)
 
 Yafei Xu (22031212416@stu.xidian.edu.cn)
 

@@ -184,4 +184,5 @@ dependencies:
   - yarl=1.18.3=py310ha8f682b_0
   - zlib=1.2.12=hcfcfb64_4
   - zstd=1.5.2=h7755175_4
+  - sci-palettes
 

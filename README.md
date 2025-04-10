@@ -34,22 +34,21 @@ It remains poorly understood how different cells in a tissue organize and coordi
 
 (3) Given a cohort of tissue samples associated with different conditions (e.g., disease risk and patient prognosis), it is important to identify condition-specific TCNs with more biological and clinical relevance (e.g., tertiary lymphoid structure (TLS), which is typically present in low-risk but not in high-risk patients of many cancer types). Most existing methods are designed to detect TCNs in individual tissue samples by unsupervised learning and thus not applicable for the identification of condition-specific TCNs de novo. 
 
-We developed this tool, named **CytoCommunity**, for identifying TCNs that can be applied in **either unsupervised or supervised** fashion. We formulate TCN identification as a community detection problem on graphs and employ a graph neural network (GNN) model to identify TCNs. **Several advantages** include:
+We developed this tool, named **CytoCommunity**, for identifying TCNs that can be applied in **either unsupervised or weakly-supervised** fashion. We formulate TCN identification as a community detection problem on graphs and employ a graph neural network (GNN) model to identify TCNs. **Several advantages** include:
 
 (1) CytoCommunity directly uses cell phenotypes as features to learn TCN partitions and thus facilitates the interpretation of TCN functions. 
 
 (2) CytoCommunity can not only infer TCNs for individual samples (unsupervised mode), but also identify condition-specific TCNs from a cohort of labeled tissue samples by leveraging differentiable graph pooling and sample labels (supervised mode), which is an effective strategy to address the difficulty of graph alignment across samples.
 
-**Highlights on the differences of TCNs identified by the two learning modes:**
+**_Highlights on the differences of TCNs identified by the two learning modes:_**
 
-**TCNs are identified per sample/image using the unsupervised mode and thus TCNs from different samples/images are NOT aligned.**
+**_1) TCNs are identified per sample/image using the unsupervised mode and thus TCNs from different samples/images are NOT aligned._**
 
-**TCNs are identified in all samples/images simultaneously using the supervised mode and thus TCNs from different samples/images are aligned.**
+**_2) TCNs are identified in all samples/images simultaneously using the weakly-supervised mode and thus TCNs from different samples/images are aligned._**
 
 **In summary, CytoCommunity represents the first computational tool for end-to-end unsupervised and supervised analyses of single-cell spatial omics maps and enables discovery of conditional-specific cell-cell communication patterns across variable spatial scales.**
 
-This latest version (main branch) is CytoCommunity V1.1.0. Please refer to https://github.com/huBioinfo/CytoCommunity/releases for previous versions. 
-
+This is the latest version (main branch) "CytoCommunity V1.1.0".
 
 ## Installation
 

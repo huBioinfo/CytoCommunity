@@ -3,6 +3,9 @@
 # Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes with CytoCommunity
 
 
+## We are exited to annouce the extended version "CytoCommunity+" (https://github.com/huBioinfo/CytoCommunity-plus), a unified weakly-supervised framework for identifying and comparing tissue cellular neighborhoods (TCNs or CNs) across large-scale spatial omics samples with single or multiple biological conditions.
+
+
 
 ## Contents
 

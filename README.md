@@ -26,7 +26,7 @@
 <div align=center><img src="https://github.com/huBioinfo/CytoCommunity/blob/main/support/Schematic_Diagram.png" width="650" height="650" alt="pipline"/></div>  
 
 
-It remains poorly understood how different cells in a tissue organize and coordinate with each other to support tissue functions. To better understand the structure-function relationship of a tissue, the concept of **tissue cellular neighborhoods (TCNs) or spatial domains** as well as their identification tools have been proposed. However, we found **several limitations** as below.
+It remains poorly understood how different cells in a tissue organize and coordinate with each other to support tissue functions. To better understand the structure-function relationship of a tissue, the concept of **tissue cellular neighborhoods (TCNs) or spatial domains** as well as their identification tools have been proposed. However, **several limitations include:**
 
 (1) Most existing methods are originally designed for spatial transcriptomics data and thus use expression of hundreds or thousands of genes as features to infer TCNs. Such methods may not be applicable to spatial proteomics data that only have a few tens of protein expression features available.
 
@@ -34,18 +34,18 @@ It remains poorly understood how different cells in a tissue organize and coordi
 
 (3) Given a cohort of tissue samples associated with different conditions (e.g., disease risk and patient prognosis), it is important to identify condition-specific TCNs with more biological and clinical relevance (e.g., tertiary lymphoid structure (TLS), which is typically present in low-risk but not in high-risk patients of many cancer types). Most existing methods are designed to detect TCNs in individual tissue samples by unsupervised learning and thus not applicable for the identification of condition-specific TCNs de novo. 
 
-We developed this tool, named **CytoCommunity**, for identifying TCNs that can be applied in **either unsupervised or weakly-supervised** fashion. We formulate TCN identification as a community detection problem on graphs and employ a graph neural network (GNN) model to identify TCNs. **Several advantages** include:
+We developed this tool, named **CytoCommunity**, for identifying TCNs that can be applied in **either unsupervised or weakly-supervised** fashion. We formulate TCN identification as a community detection problem on graphs and employ a graph neural network (GNN) model to identify TCNs. **Several advantages include:**
 
 (1) CytoCommunity directly uses cell phenotypes as features to learn TCN partitions and thus facilitates the interpretation of TCN functions. 
 
-(2) CytoCommunity can not only infer TCNs for individual samples (unsupervised mode), but also identify condition-specific TCNs from a cohort of labeled tissue samples by leveraging differentiable graph pooling and sample labels (supervised mode), which is an effective strategy to address the difficulty of graph alignment across samples.
+(2) CytoCommunity can not only infer TCNs for individual samples (unsupervised mode), but also identify **condition-specific TCNs** from a cohort of labeled tissue samples by leveraging differentiable graph pooling and sample labels (supervised mode), which is an effective strategy to address the difficulty of graph alignment across samples.
 
 
 **_Highlights on the differences of TCNs identified by the two learning modes:_**
 
 **_1) TCNs are identified per sample/image using the unsupervised mode and thus TCNs from different samples/images are NOT aligned._**
 
-**_2) TCNs are identified in all samples/images simultaneously using the weakly-supervised mode and thus TCNs from different samples/images are aligned._**
+**_2) TCNs are identified in all samples/images simultaneously using the weakly-supervised mode and thus TCNs from different samples/images are automatically aligned._**
 
 
 ## Installation

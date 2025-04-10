@@ -3,11 +3,11 @@
 # Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes with CytoCommunity
 
 
-## _2025-04-10: We are exited to annouce an extended version "CytoCommunity+" (https://github.com/huBioinfo/CytoCommunity-plus)._
-### _Advantages of CytoCommunity+:_
-### _(1) Using significantly less memory for large-scale spatial omics samples with millions of cells._
-### _(2) A unified weakly-supervised model applicable for both multi-condition and single-condition datasets._
-### _(3) High TCN alignment performance makes it well-suited for large cohort studies._
+### _2025-04-10: We are exited to annouce an extended version "CytoCommunity+" (https://github.com/huBioinfo/CytoCommunity-plus)._
+#### _Advantages of CytoCommunity+:_
+#### _(1) Using significantly less memory for large-scale spatial omics samples with millions of cells._
+#### _(2) A unified weakly-supervised model applicable for both multi-condition and single-condition datasets._
+#### _(3) High TCN alignment performance makes it well-suited for large cohort studies._
 
 
 
@@ -258,13 +258,15 @@ python Step4_ResultVisualization.py
 
 
 ## Maintainers
+
+Yuxuan Hu (huyuxuan@xidian.edu.cn)
+
 Liukang Wu (yetong@stu.xidian.edu.cn)
 
 Yafei Xu (22031212416@stu.xidian.edu.cn)
 
 Kai Tan (tank1@chop.edu)
 
-Yuxuan Hu (huyuxuan@xidian.edu.cn)
 
 ## Citation
 

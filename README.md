@@ -3,7 +3,7 @@
 # Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes with CytoCommunity
 
 
-## _2025-04-10: We are exited to annouce the extended version "CytoCommunity+" (https://github.com/huBioinfo/CytoCommunity-plus)._
+## _2025-04-10: We are exited to annouce an extended version "CytoCommunity+" (https://github.com/huBioinfo/CytoCommunity-plus)._
 ### _Advantages of CytoCommunity+:_
 ### _(1) Using significantly less memory for large-scale spatial omics samples with hundreds of thousands of cells._
 ### _(2) A unified weakly-supervised model applicable for both multi-condition and single-condition datasets._

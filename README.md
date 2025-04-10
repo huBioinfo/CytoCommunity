@@ -6,11 +6,8 @@
 ## 2025-04-10: We are exited to annouce the extended version "CytoCommunity+" (https://github.com/huBioinfo/CytoCommunity-plus), a unified weakly-supervised framework for identifying and comparing tissue cellular neighborhoods (TCNs or CNs) across large-scale spatial omics samples with single or multiple biological conditions.
 
 ### Advantages of CytoCommunity+:
-
 ### (1) Using significantly less memory for large-scale spatial omics samples with hundreds of thousands of cells.
-
 ### (2) A unified weakly-supervised model applicable for both multi-condition and single-condition datasets.
-
 ### (3) High TCN alignment performance makes it well-suited for large cohort studies.
 
 

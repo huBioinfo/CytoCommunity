@@ -5,7 +5,7 @@
 
 ## _2025-04-10: We are exited to annouce an extended version "CytoCommunity+" (https://github.com/huBioinfo/CytoCommunity-plus)._
 ### _Advantages of CytoCommunity+:_
-### _(1) Using significantly less memory for large-scale spatial omics samples with hundreds of thousands of cells._
+### _(1) Using significantly less memory for large-scale spatial omics samples with millions of cells._
 ### _(2) A unified weakly-supervised model applicable for both multi-condition and single-condition datasets._
 ### _(3) High TCN alignment performance makes it well-suited for large cohort studies._
 

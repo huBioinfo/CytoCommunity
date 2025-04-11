@@ -7,7 +7,7 @@
 #### _Advantages of CytoCommunity+:_
 #### _(1) Using significantly less memory for large-scale spatial omics samples with millions of cells._
 #### _(2) A unified weakly-supervised model applicable for both multi-condition and single-condition datasets._
-#### _(3) High TCN alignment performance makes it well-suited for large cohort studies._
+#### _(3) High TCN alignment performance makes it well-suited for comparative analysis in large cohort studies._
 
 
 

@@ -3,7 +3,7 @@
 # Unsupervised and supervised discovery of tissue cellular neighborhoods from cell phenotypes with CytoCommunity
 
 
-### _2025-04-10: We are excited to annouce an extended version "CytoCommunity+" (https://github.com/huBioinfo/CytoCommunity-plus)._
+### _2025-04-10: We are excited to annouce an extended version "CytoCommunity2" (https://github.com/huBioinfo/CytoCommunity-plus)._
 #### _Advantages of CytoCommunity+:_
 #### _(1) Using significantly less memory for large-scale spatial omics samples with millions of cells._
 #### _(2) A unified weakly-supervised model applicable for both multi-condition and single-condition datasets._
@@ -247,6 +247,7 @@ python Step4_ResultVisualization.py
 
 
 ## Update Log
+2026-01-31: The latest version update has replaced the dense versions of the graph convolutional layer and pooling layer with the sparse versions.
 
 2024-01-08: The latest release “CytoCommunity\_v1.1.0” (main branch) makes the input data easier to prepare, compared to the original version v1.0.0.
 

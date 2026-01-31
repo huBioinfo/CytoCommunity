@@ -6,8 +6,8 @@ import datetime
 import os
 import shutil
 import torch
-import torch_geometric.transforms as T
 from torch_geometric.data import Data, InMemoryDataset
+
 
 
 # Hyperparameters
@@ -50,7 +50,6 @@ for graph_index in range(0, len(region_name_list)):
     KNNgraph_EdgeIndex = np.argwhere(KNNgraph_AdjMat_fix > 0)  #1min
     filename0 = ThisStep_OutputFolderName + region_name + "_EdgeIndex.txt"
     np.savetxt(filename0, KNNgraph_EdgeIndex, delimiter='\t', fmt='%i')  #save as integers. Checked the bidirectional edges.
-    
 print("All topology structures have been generated!")
 print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 
@@ -137,7 +136,7 @@ for i in range(0, len(region_name_list)):
     graph_label = np.loadtxt(GraphLabel_filename, dtype = 'int64', delimiter="\t")  #change to int64 from int due to expected torch.LongTensor.
     y = torch.from_numpy(graph_label)
     #print(y.type()) #should be torch.LongTensor due to its dtype=torch.int64
-
+    
     data = Data(x=x, edge_index=edge_index.t().contiguous(), y=y)
     data_list.append(data)
 
@@ -164,7 +163,7 @@ class SpatialOmicsImageDataset(InMemoryDataset):
         torch.save((data, slices), self.processed_paths[0])
 
 # Create an object of this "SpatialOmicsImageDataset" class.
-dataset = SpatialOmicsImageDataset(ThisStep_OutputFolderName, transform=T.ToDense(max_nodes))
+dataset = SpatialOmicsImageDataset(ThisStep_OutputFolderName)
 print("Step1 done!")
 print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 

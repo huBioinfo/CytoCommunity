@@ -6,7 +6,6 @@ import datetime
 import os
 import shutil
 import torch
-import torch_geometric.transforms as T
 from torch_geometric.data import Data, InMemoryDataset
 
 
@@ -158,7 +157,7 @@ class SpatialOmicsImageDataset(InMemoryDataset):
         torch.save((data, slices), self.processed_paths[0])
 
 # Create an object of this "SpatialOmicsImageDataset" class.
-dataset = SpatialOmicsImageDataset(ThisStep_OutputFolderName, transform=T.ToDense(max_nodes))
+dataset = SpatialOmicsImageDataset(ThisStep_OutputFolderName)
 print("Step1 done!")
 print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 

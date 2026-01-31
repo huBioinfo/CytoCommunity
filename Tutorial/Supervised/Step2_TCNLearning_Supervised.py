@@ -1,10 +1,10 @@
 import torch
 import torch.nn.functional as F
 from torch.nn import Linear
-from torch_geometric.loader import DenseDataLoader
-from torch_geometric.nn import DenseGraphConv, dense_mincut_pool
+from torch_geometric.loader import DataLoader
+from sparse_mincut_pool import sparse_mincut_pool_batch
 from torch_geometric.data import InMemoryDataset
-import torch_geometric.transforms as T
+from torch_geometric.nn import GraphConv ,DenseGraphConv
 import os
 import shutil
 import numpy as np
@@ -50,37 +50,33 @@ class SpatialOmicsImageDataset(InMemoryDataset):
         data, slices = self.collate(data_list)
         torch.save((data, slices), self.processed_paths[0])
 
-dataset = SpatialOmicsImageDataset(LastStep_OutputFolderName, transform=T.ToDense(max_nodes))
+dataset = SpatialOmicsImageDataset(LastStep_OutputFolderName)
 
 
 class Net(torch.nn.Module):
     def __init__(self, in_channels, out_channels, hidden_channels=Embedding_Dimension):
         super(Net, self).__init__()
 
-        self.conv1 = DenseGraphConv(in_channels, hidden_channels)
+        self.conv1 =GraphConv(in_channels, hidden_channels)
         num_cluster1 = Num_TCN   #This is a hyperparameter.
         self.pool1 = Linear(hidden_channels, num_cluster1)
 
-        self.conv3 = DenseGraphConv(hidden_channels, hidden_channels)
+        self.conv3 =DenseGraphConv(hidden_channels, hidden_channels)
 
         self.lin1 = Linear(hidden_channels, hidden_channels)
         self.lin2 = Linear(hidden_channels, out_channels)
 
-    def forward(self, x, adj, mask=None):
+    def forward(self, x, edge_index, batch, edge_weight=None):
+        x = F.relu(self.conv1(x, edge_index, edge_weight))
+        s = self.pool1(x) 
+        x, adj, mc_loss, o_loss = sparse_mincut_pool_batch(x, edge_index, s, batch, edge_weight=edge_weight)
 
-        x = F.relu(self.conv1(x, adj, mask))
-        s = self.pool1(x)  #here s is a non-softmax tensor.
-        x, adj, mc1, o1 = dense_mincut_pool(x, adj, s, mask)
-        #Save important clustering results_1.
-        ClusterAssignTensor_1 = s
-        ClusterAdjTensor_1 = adj
-
-        x = self.conv3(x, adj)
-
-        x = x.mean(dim=1)
+        x = self.conv3(x, adj) 
+        x = x.mean(dim=1) 
         x = F.relu(self.lin1(x))
         x = self.lin2(x)
-        return F.log_softmax(x, dim=-1), mc1, o1, ClusterAssignTensor_1, ClusterAdjTensor_1
+
+        return F.log_softmax(x, dim=-1), mc_loss, o_loss, s, adj
 
 
 def train(epoch):
@@ -92,7 +88,7 @@ def train(epoch):
     for data in train_loader:
         data = data.to(device)
         optimizer.zero_grad()
-        out, mc_loss, o_loss, _, _ = model(data.x, data.adj, data.mask)
+        out, mc_loss, o_loss, _, _ = model(data.x, data.edge_index, data.batch)
         loss_CE = F.nll_loss(out, data.y.view(-1))
         loss_MinCut = mc_loss + o_loss
 
@@ -114,13 +110,16 @@ def test(loader):
 
     for data in loader:
         data = data.to(device)
-        #pred = model(data.x, data.adj, data.mask)[0].max(dim=1)[1]
-        ModelResultPr = model(data.x, data.adj, data.mask)[0]
+        ModelResultPr = model(data.x, data.edge_index, data.batch)[0]
         pred = ModelResultPr.max(dim=1)[1]
         correct += pred.eq(data.y.view(-1)).sum().item()
         
-        pred_info = np.column_stack((np.array(torch.exp(ModelResultPr)), np.array(pred), np.array(data.y.view(-1)))) #cat by columns. And convert log_softmax back to probability.
-        pr_Table = np.row_stack((pr_Table, pred_info)) #cat by rows.
+        pred_info = np.column_stack((
+            torch.exp(ModelResultPr).cpu().detach().numpy(),  
+            pred.cpu().detach().numpy(),                      
+            data.y.view(-1).cpu().detach().numpy())          
+        )#cat by columns. And convert log_softmax back to probability.
+        pr_Table = np.row_stack((pr_Table, pred_info)) 
 
     return correct / len(loader.dataset), pr_Table
 
@@ -155,8 +154,8 @@ for num_time in range(1, Num_Times+1):  #10 times of k-fold cross-validation.
         print(f'This is fold: {num_fold:02d}, TestSamples: {test_list}')
         test_dataset = dataset[test_list]
         train_dataset = dataset[train_list]
-        train_loader = DenseDataLoader(train_dataset, batch_size=MiniBatchSize, shuffle=True)
-        test_loader = DenseDataLoader(test_dataset, batch_size=1)
+        train_loader = DataLoader(train_dataset, batch_size=MiniBatchSize, shuffle=True)
+        test_loader = DataLoader(test_dataset, batch_size=1)
 
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         model = Net(dataset.num_features, dataset.num_classes).to(device)  #Initialize model for each fold.
@@ -185,7 +184,7 @@ for num_time in range(1, Num_Times+1):  #10 times of k-fold cross-validation.
         np.savetxt(filename6, test_pr, delimiter=',')
 
         #Extract the soft clustering matrix using the trained model of each fold.
-        all_sample_loader = DenseDataLoader(dataset, batch_size=1)
+        all_sample_loader = DataLoader(dataset, batch_size=1)
         EachSample_num = 0
         
         filename_5 = FoldFolderName + "/ModelPrediction.csv"
@@ -196,31 +195,30 @@ for num_time in range(1, Num_Times+1):  #10 times of k-fold cross-validation.
 
         for EachData in all_sample_loader:
             EachData = EachData.to(device)
-            TestModelResult = model(EachData.x, EachData.adj, EachData.mask)
+            TestModelResult = model(EachData.x, EachData.edge_index, EachData.batch)
             PredLabel = TestModelResult[0].max(dim=1)[1]
             CorrectFlag = PredLabel.eq(EachData.y.view(-1)).sum().item()
-            TrueLableArray = np.array(EachData.y.view(-1))
-            PredLabelArray = np.array(PredLabel)
+            TrueLableArray = np.array(EachData.y.view(-1).cpu())
+            PredLabelArray = np.array(PredLabel.cpu())
             #print(f'Prediction correct flag: {CorrectFlag:01d}, True label: {TrueLableArray}, Predicted label: {PredLabelArray}')
             with open(filename_5, "a", newline='') as f5:
                 f5_csv = csv.writer(f5)
                 f5_csv.writerow([EachSample_num, CorrectFlag, TrueLableArray, PredLabelArray])
 
-            ClusterAssignMatrix1 = TestModelResult[3][0, :, :]
-            ClusterAssignMatrix1 = torch.softmax(ClusterAssignMatrix1, dim=-1)  #checked, consistent with the function built in "dense_mincut_pool".
-            ClusterAssignMatrix1 = ClusterAssignMatrix1.detach().numpy()
+            ClusterAssignMatrix1 = TestModelResult[3]
+            ClusterAssignMatrix1 = torch.softmax(ClusterAssignMatrix1, dim=-1).cpu().detach().numpy()  #checked, consistent with the function built in "dense_mincut_pool".
             filename1 = FoldFolderName + "/ClusterAssignMatrix1_" + str(EachSample_num) + ".csv"
             np.savetxt(filename1, ClusterAssignMatrix1, delimiter=',')
 
-            ClusterAdjMatrix1 = TestModelResult[4][0, :, :]
-            ClusterAdjMatrix1 = ClusterAdjMatrix1.detach().numpy()
+            ClusterAdjMatrix1 = TestModelResult[4][0]
+            ClusterAdjMatrix1 = ClusterAdjMatrix1.cpu().detach().numpy()
             filename2 = FoldFolderName + "/ClusterAdjMatrix1_" + str(EachSample_num) + ".csv"
             np.savetxt(filename2, ClusterAdjMatrix1, delimiter=',')
 
-            NodeMask = EachData.mask
-            NodeMask = np.array(NodeMask)
+            num_current_nodes = EachData.x.shape[0]
+            NodeMask = np.ones((num_current_nodes, 1), dtype=int)
             filename3 = FoldFolderName + "/NodeMask_" + str(EachSample_num) + ".csv"
-            np.savetxt(filename3, NodeMask.T, delimiter=',', fmt='%i')  #save as integers.
+            np.savetxt(filename3, NodeMask, delimiter=',', fmt='%i')  #save as integers.
 
             EachSample_num = EachSample_num + 1
 

@@ -1,10 +1,11 @@
 import torch
 import torch.nn.functional as F
 from torch.nn import Linear
-from torch_geometric.loader import DenseDataLoader
-from torch_geometric.nn import DenseGraphConv, dense_mincut_pool
+from torch_geometric.loader import DataLoader
+from sparse_mincut_pool import sparse_mincut_pool_batch
+
 from torch_geometric.data import InMemoryDataset
-import torch_geometric.transforms as T
+from torch_geometric.nn import GraphConv
 import os
 import numpy as np
 import pandas as pd
@@ -60,27 +61,26 @@ class SpatialOmicsImageDataset(InMemoryDataset):
         data, slices = self.collate(data_list)
         torch.save((data, slices), self.processed_paths[0])
 
-dataset = SpatialOmicsImageDataset(LastStep_OutputFolderName, transform=T.ToDense(max_nodes))
+dataset = SpatialOmicsImageDataset(LastStep_OutputFolderName)
 
 
 class Net(torch.nn.Module):
     def __init__(self, in_channels, out_channels, hidden_channels=Embedding_Dimension):
         super(Net, self).__init__()
 
-        self.conv1 = DenseGraphConv(in_channels, hidden_channels)
+        self.conv1 = GraphConv(in_channels, hidden_channels)
         num_cluster1 = Num_TCN   #This is a hyperparameter.
         self.pool1 = Linear(hidden_channels, num_cluster1)
 
-    def forward(self, x, adj, mask=None):
-
-        x = F.relu(self.conv1(x, adj, mask))
-        s = self.pool1(x)  #Here "s" is a non-softmax tensor.
-        x, adj, mc1, o1 = dense_mincut_pool(x, adj, s, mask)
+    def forward(self, x, edge_index, batch):
+        x = F.relu(self.conv1(x, edge_index))
+        s = self.pool1(x)   #Here "s" is a non-softmax tensor.
+        x_pool, adj_pool, mc1, o1 = sparse_mincut_pool_batch(x, edge_index, s, batch)
         #Save important clustering results_1.
         ClusterAssignTensor_1 = s
-        ClusterAdjTensor_1 = adj
+        ClusterAdjTensor_1 = adj_pool
 
-        return F.log_softmax(x, dim=-1), mc1, o1, ClusterAssignTensor_1, ClusterAdjTensor_1
+        return F.log_softmax(x_pool, dim=-1), mc1, o1, ClusterAssignTensor_1, ClusterAdjTensor_1
 
 
 def train(epoch):
@@ -90,7 +90,7 @@ def train(epoch):
     for data in train_loader:
         data = data.to(device)
         optimizer.zero_grad()
-        out, mc_loss, o_loss, _, _ = model(data.x, data.adj, data.mask)
+        out, mc_loss, o_loss, _, _ = model(data.x, data.edge_index, data.batch)
         loss = mc_loss + o_loss
         loss.backward()
         loss_all += loss.item()
@@ -104,8 +104,8 @@ os.makedirs(ThisStep_OutputFolderName, exist_ok=True)
 
 train_index = [region_name_list["Image"].values.tolist().index(Image_Name)]
 train_dataset = dataset[train_index]
-train_loader = DenseDataLoader(train_dataset, batch_size=1)
-all_sample_loader = DenseDataLoader(train_dataset, batch_size=1)
+train_loader = DataLoader(train_dataset, batch_size=1)
+all_sample_loader = DataLoader(train_dataset, batch_size=1)
 
 print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 run_number = 1
@@ -150,21 +150,21 @@ while run_number <= Num_Run:  #Generate multiple independent runs for ensemble.
     #Extract the soft TCN assignment matrix using the trained model.
     for EachData in all_sample_loader:
         EachData = EachData.to(device)
-        TestModelResult = model(EachData.x, EachData.adj, EachData.mask)
+        TestModelResult = model(EachData.x, EachData.edge_index, EachData.batch)
 
-        ClusterAssignMatrix1 = TestModelResult[3][0, :, :]
+        ClusterAssignMatrix1 = TestModelResult[3]
         ClusterAssignMatrix1 = torch.softmax(ClusterAssignMatrix1, dim=-1)  #Checked, consistent with the built-in function "dense_mincut_pool".
-        ClusterAssignMatrix1 = ClusterAssignMatrix1.detach().numpy()
+        ClusterAssignMatrix1 = ClusterAssignMatrix1.cpu().detach().numpy()
         filename1 = RunFolderName + "/TCN_AssignMatrix1.csv"
         np.savetxt(filename1, ClusterAssignMatrix1, delimiter=',')
 
         ClusterAdjMatrix1 = TestModelResult[4][0, :, :]
-        ClusterAdjMatrix1 = ClusterAdjMatrix1.detach().numpy()
+        ClusterAdjMatrix1 = ClusterAdjMatrix1.cpu().detach().numpy()
         filename2 = RunFolderName + "/TCN_AdjMatrix1.csv"
         np.savetxt(filename2, ClusterAdjMatrix1, delimiter=',')
 
-        NodeMask = EachData.mask
-        NodeMask = np.array(NodeMask)
+        NodeMask = EachData.x.size(0)
+        NodeMask = np.ones((NodeMask,), dtype=int)
         filename3 = RunFolderName + "/NodeMask.csv"
         np.savetxt(filename3, NodeMask.T, delimiter=',', fmt='%i')  #save as integers.
 

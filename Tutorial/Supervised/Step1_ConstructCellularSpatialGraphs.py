@@ -136,10 +136,8 @@ for i in range(0, len(region_name_list)):
     graph_label = np.loadtxt(GraphLabel_filename, dtype = 'int64', delimiter="\t")  #change to int64 from int due to expected torch.LongTensor.
     y = torch.from_numpy(graph_label)
     #print(y.type()) #should be torch.LongTensor due to its dtype=torch.int64
-
-    edge_weight = torch.ones(edge_index.size(1), dtype=torch.float32)
     
-    data = Data(x=x, edge_index=edge_index.t().contiguous(), y=y, edge_weight=edge_weight)
+    data = Data(x=x, edge_index=edge_index.t().contiguous(), y=y)
     data_list.append(data)
 
 # Define "SpatialOmicsImageDataset" class based on ordinary Python list.

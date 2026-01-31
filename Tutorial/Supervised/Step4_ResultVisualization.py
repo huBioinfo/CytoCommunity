@@ -148,4 +148,3 @@ for graph_index in range(0, len(region_name_list)):
 
 print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 
-

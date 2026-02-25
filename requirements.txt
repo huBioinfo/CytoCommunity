@@ -119,7 +119,8 @@ python-louvain=0.15=pyhd8ed1ab_1
 python_abi=3.10=2_cp310
 pytorch=1.11.0=py3.10_cpu_0
 pytorch-cluster=1.6.0=py310_torch_1.11.0_cpu
-pytorch-mutex=1.0=cpu
+#pytorch-mutex=1.0=cpu see this https://osv.dev/vulnerability/MAL-2026-590
+#if you need pytorch-mutex find another version that is not 0.0.0, 1, 7.0.0, 7.0.1, 7.0.3 or 10.0.0
 pytorch-scatter=2.0.9=py310_torch_1.11.0_cpu
 pytorch-sparse=0.6.15=py310_torch_1.11.0_cpu
 pytorch-spline-conv=1.2.1=py310_torch_1.11.0_cpu
